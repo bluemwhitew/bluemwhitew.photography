@@ -13,6 +13,8 @@
         <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js"/>
         <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+        <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
         <style amp-boilerplate>
             body {
@@ -178,6 +180,82 @@
                 text-align: center;
             }
 
+            /* Section: Media Grid */
+            .section__media-grid div[role="list"] {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, 60vh);
+            }
+
+            .section__media-grid div[role="list"] article {
+                background-color: #101010;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                text-align: left;
+            }
+
+            .section__media-grid div[role="list"] article:hover amp-img {
+                opacity: 0.75;
+            }
+
+            .section__media-grid div[role="list"] article amp-img {
+                bottom: 0;
+                left: 0;
+                opacity: 0.5;
+                position: absolute;
+                right: 0;
+                transition: opacity 500ms ease-in-out;
+                top: 0;
+            }
+
+            .section__media-grid div[role="list"] article amp-img img {
+                object-fit: cover;
+            }
+
+            .section__media-grid div[role="list"] article .meta {
+                max-width: 30rem;
+                padding: 2.5rem;
+                z-index: 1;
+            }
+
+            .section__media-grid div[role="list"] article .meta a {
+                color: inherit;
+                font-size: 0.875rem;
+                font-weight: 700;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            @media (min-width: 576px) {
+                .section__media-grid div[role="list"] {
+                    display: grid;
+                    grid-template-areas: "gallery_first gallery_second" "gallery_first gallery_third";
+                    grid-template-columns: 50% 1fr;
+                    grid-template-rows: repeat(2, minmax(20rem, 1fr));
+                }
+
+                .section__media-grid div[role="list"] article:nth-child(1) {
+                    grid-area: gallery_first;
+                }
+
+                .section__media-grid div[role="list"] article:nth-child(2) {
+                    grid-area: gallery_second;
+                }
+
+                .section__media-grid div[role="list"] article:nth-child(3) {
+                    grid-area: gallery_third;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .section__media-grid div[role="list"] {
+                    grid-template-columns: 60% 1fr;
+                }
+            }
+
             footer .copyright {
                 padding: 2rem 0;
                 text-align: center;
@@ -198,6 +276,22 @@
         <main>
             <section class="section__coming-soon">
                 <h1>Coming Soon</h1>
+            </section>
+            <section class="section__media-grid">
+                <amp-list height="300" layout="responsive" max-items="3" src="./api/v1/gallery.json" width="600">
+                    <template type="amp-mustache">
+                        <article>
+                            <amp-img alt="{{img.alt}}" height="1024" layout="responsive" src="{{img.src}}" width="1024"></amp-img>
+                            <div class="meta">
+                                <h3>{{title}}</h3>
+                                <p>{{description}}</p>
+                                {{#link.href}}
+                                    <a href="{{link.href}}">{{link.text}}</a>
+                                {{/link.href}}
+                            </div>
+                        </article>
+                    </template>
+                </amp-list>
             </section>
         </main>
         <footer>
