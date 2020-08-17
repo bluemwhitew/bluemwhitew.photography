@@ -13,6 +13,8 @@
         <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js"/>
         <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+        <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
         <style amp-boilerplate>
             body {
@@ -198,6 +200,22 @@
         <main>
             <section class="section__coming-soon">
                 <h1>Coming Soon</h1>
+            </section>
+            <section class="section__media-grid">
+                <amp-list height="300" layout="responsive" max-items="3" src="./api/v1/gallery.json" width="600">
+                    <template type="amp-mustache">
+                        <article>
+                            <amp-img alt="{{img.alt}}" height="1024" layout="responsive" src="{{img.src}}" width="1024"></amp-img>
+                            <div class="meta">
+                                <h3>{{title}}</h3>
+                                <p>{{description}}</p>
+                                {{#link.href}}
+                                    <a href="{{link.href}}">{{link.text}}</a>
+                                {{/link.href}}
+                            </div>
+                        </article>
+                    </template>
+                </amp-list>
             </section>
         </main>
         <footer>
