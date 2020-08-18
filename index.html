@@ -172,6 +172,38 @@
                 margin-top: 0;
             }
 
+            svg:not(:root).svg-inline--fa {
+                overflow: visible;
+            }
+
+            header svg {
+                fill: #fff;
+                transition: opacity 500ms ease-in-out;
+                width: 1.33rem;
+            }
+
+            header .logo,
+            header .menu {
+                bottom: auto;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 900;
+                position: fixed;
+                text-decoration: none;
+                top: 2.5rem;
+                z-index: 100;
+            }
+
+            header .logo {
+                left: 2.5rem;
+                right: auto;
+            }
+
+            header .menu {
+                left: auto;
+                right: 2.5rem;
+            }
+
             .section__coming-soon {
                 display: flex;
                 flex-direction: column;
@@ -273,6 +305,18 @@
         <title>Coming Soon &mdash; bluemwhitew Photography</title>
     </head>
     <body>
+        <header>
+            <a aria-current="page" class="logo" href="./">
+                <svg aria-hidden="true" class="svg-inline--fa fa-waveform" data-icon="waveform" data-prefix="fal" focusable="false" role="img" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M232 96h-16a8 8 0 0 0-8 8v304a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V104a8 8 0 0 0-8-8zm-96 96h-16a8 8 0 0 0-8 8v112a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V200a8 8 0 0 0-8-8zm-96 32H24a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8zm384-96h-16a8 8 0 0 0-8 8v240a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V136a8 8 0 0 0-8-8zm192 96h-16a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8zM520 64h-16a8 8 0 0 0-8 8v368a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM328 0h-16a8 8 0 0 0-8 8v496a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V8a8 8 0 0 0-8-8z"></path>
+                </svg>
+            </a>
+            <a class="menu" href="#" id="menu">
+                <svg aria-hidden="true" class="svg-inline--fa fa-bars" data-icon="bars" data-prefix="fal" focusable="false" role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"></path>
+                </svg>
+            </a>
+        </header>
         <main>
             <section class="section__coming-soon">
                 <h1>Coming Soon</h1>
