@@ -15,6 +15,7 @@
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
         <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
         <style amp-boilerplate>
             body {
@@ -172,6 +173,114 @@
                 margin-top: 0;
             }
 
+            svg:not(:root).svg-inline--fa {
+                overflow: visible;
+            }
+
+            header svg {
+                fill: #fff;
+                transition: opacity 500ms ease-in-out;
+                width: 1.33rem;
+            }
+
+            header .logo,
+            header .menu,
+            header .close {
+                bottom: auto;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 900;
+                position: fixed;
+                text-decoration: none;
+                top: 2.5rem;
+                transition: opacity ease-in-out 500ms;
+                z-index: 100;
+            }
+
+            header .logo:hover,
+            header .menu:hover,
+            header .close:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+
+            header .logo {
+                left: 2.5rem;
+                right: auto;
+            }
+
+            header .menu,
+            header .close {
+                left: auto;
+                right: 2.5rem;
+            }
+
+            /* Sidebar */
+            amp-sidebar {
+                background-color: #000;
+                max-width: 100vw;
+            }
+
+            amp-sidebar h6 {
+                text-transform: uppercase;
+            }
+
+            /* Sidebar: Menu */
+            .sidebar__menu {
+                width: 90vw;
+            }
+
+            .sidebar__menu .inner {
+                color: #fff;
+                display: grid;
+                padding: 7.5rem 1.25rem 2.5rem;
+                grid-template-columns: 50% 1fr;
+            }
+
+            .sidebar__menu h6,
+            .sidebar__menu a[aria-current="page"],
+            .sidebar__menu a:hover {
+                opacity: 0.5;
+            }
+
+            .sidebar__menu ol,
+            .sidebar__menu ul {
+                list-style: none;
+                margin: 0;
+                padding-left: 0;
+            }
+
+            .sidebar__menu a {
+                color: inherit;
+                text-decoration: none;
+                transition: opacity ease-in-out 500ms;
+            }
+
+            .nav__primary {
+                font-size: 1.5rem;
+            }
+
+            .nav__primary li {
+                margin-bottom: 0.5rem;
+            }
+
+            @media (max-width: 767.98px) {
+                .nav__recent-work li:nth-child(n+5) {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .sidebar__menu .inner {
+                    grid-template-columns: 75% 1fr;
+                    padding: 5rem 2.5rem 2.5rem;
+                }
+
+                .nav__primary {
+                    font-size: 3.75rem;
+                }
+            }
+
             .section__coming-soon {
                 display: flex;
                 flex-direction: column;
@@ -273,6 +382,45 @@
         <title>Coming Soon &mdash; bluemwhitew Photography</title>
     </head>
     <body>
+        <header>
+            <a aria-current="page" class="logo" href="./" tabindex="0">
+                <svg aria-hidden="true" class="svg-inline--fa fa-waveform" data-icon="waveform" data-prefix="fal" focusable="false" role="img" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M232 96h-16a8 8 0 0 0-8 8v304a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V104a8 8 0 0 0-8-8zm-96 96h-16a8 8 0 0 0-8 8v112a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V200a8 8 0 0 0-8-8zm-96 32H24a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8zm384-96h-16a8 8 0 0 0-8 8v240a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V136a8 8 0 0 0-8-8zm192 96h-16a8 8 0 0 0-8 8v48a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-48a8 8 0 0 0-8-8zM520 64h-16a8 8 0 0 0-8 8v368a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM328 0h-16a8 8 0 0 0-8 8v496a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V8a8 8 0 0 0-8-8z"></path>
+                </svg>
+            </a>
+            <div aria-label="Open Menu" class="menu" on="tap:menu.open" role="button" tabindex="1">
+                <svg aria-hidden="true" class="svg-inline--fa fa-bars" data-icon="bars" data-prefix="fal" focusable="false" role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"></path>
+                </svg>
+            </div>
+            <amp-sidebar class="sidebar__menu" id="menu" layout="nodisplay" side="right">
+                <div aria-label="Close Menu" class="close" on="tap:menu.close" role="button" tabindex="0">
+                    <svg aria-hidden="true" class="svg-inline--fa fa-times" data-icon="times" data-prefix="fal" focusable="false" role="img" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path>
+                    </svg>
+                </div>
+                <div class="inner">
+                    <nav class="nav__primary">
+                        <ul>
+                            <li><a aria-current="page" href=".">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="nav__recent-work">
+                        <h6>Recent Work</h6>
+                        <ol>
+                            <li><a href="#">FARR</a></li>
+                            <li><a href="#">Dance with the Dead</a></li>
+                            <li><a href="#">One Night in Shanghai</a></li>
+                            <li><a href="#">RazerStore London: Grand Opening</a></li>
+                            <li><a href="#">EGX: Capcom Pro Tour 2019</a></li>
+                            <li><a href="#">Insomnia 65: Arena Clash</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </amp-sidebar>
+        </header>
         <main>
             <section class="section__coming-soon">
                 <h1>Coming Soon</h1>
