@@ -184,7 +184,8 @@
             }
 
             header .logo,
-            header .menu {
+            header .menu,
+            header .close {
                 bottom: auto;
                 color: #fff;
                 font-size: 20px;
@@ -192,7 +193,15 @@
                 position: fixed;
                 text-decoration: none;
                 top: 2.5rem;
+                transition: opacity ease-in-out 500ms;
                 z-index: 100;
+            }
+
+            header .logo:hover,
+            header .menu:hover,
+            header .close:hover {
+                cursor: pointer;
+                opacity: 0.5;
             }
 
             header .logo {
@@ -200,9 +209,76 @@
                 right: auto;
             }
 
-            header .menu {
+            header .menu,
+            header .close {
                 left: auto;
                 right: 2.5rem;
+            }
+
+            /* Sidebar */
+            amp-sidebar {
+                background-color: #000;
+                max-width: 100vw;
+            }
+
+            amp-sidebar h6 {
+                text-transform: uppercase;
+            }
+
+            /* Sidebar: Menu */
+            .sidebar__menu {
+                width: 90vw;
+            }
+
+            .sidebar__menu .inner {
+                color: #fff;
+                display: grid;
+                padding: 7.5rem 1.25rem 2.5rem;
+                grid-template-columns: 50% 1fr;
+            }
+
+            .sidebar__menu h6,
+            .sidebar__menu a[aria-current="page"],
+            .sidebar__menu a:hover {
+                opacity: 0.5;
+            }
+
+            .sidebar__menu ol,
+            .sidebar__menu ul {
+                list-style: none;
+                margin: 0;
+                padding-left: 0;
+            }
+
+            .sidebar__menu a {
+                color: inherit;
+                text-decoration: none;
+                transition: opacity ease-in-out 500ms;
+            }
+
+            .nav__primary {
+                font-size: 1.5rem;
+            }
+
+            .nav__primary li {
+                margin-bottom: 0.5rem;
+            }
+
+            @media (max-width: 767.98px) {
+                .nav__recent-work li:nth-child(n+5) {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .sidebar__menu .inner {
+                    grid-template-columns: 75% 1fr;
+                    padding: 5rem 2.5rem 2.5rem;
+                }
+
+                .nav__primary {
+                    font-size: 3.75rem;
+                }
             }
 
             .section__coming-soon {
