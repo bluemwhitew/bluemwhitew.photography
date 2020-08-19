@@ -1,24 +1,24 @@
 name: Deploy
 on:
-  pull_request:
-    branches:
-      - master
   push:
-    branches:
-      - master
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
 jobs:
   deploy:
     if: github.repository == 'bluemwhitew/bluemwhitew.photography'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: '10.14.x'
 
-      - name: Cache Dependencies
+      - name: Cache
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -35,6 +35,6 @@ jobs:
           host: ${{ secrets.HOST }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          source: "dist"
+          source: "dist/*"
           target: ${{ secrets.TARGET }} # "/var/www/x1908"
           username: ${{ secrets.USERNAME }}
