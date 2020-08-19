@@ -28,5 +28,8 @@
         "type": "git",
         "url": "git@github.com:bluemwhitew/bluemwhitew.photography.git"
     },
-    "scripts": {}
+    "scripts": {
+        "build": "eleventy",
+        "start": "eleventy --port=1908 --serve"
+    }
 }
