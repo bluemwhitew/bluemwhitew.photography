@@ -9,7 +9,9 @@
     "dependencies": {
         "@11ty/eleventy": "^0.11.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@ampproject/eleventy-plugin-amp": "^0.5.2"
+    },
     "engines": {
         "node": ">=10.14",
         "npm": ">=6.14"
