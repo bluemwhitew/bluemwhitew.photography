@@ -117,6 +117,11 @@
             footer .copyright a {
                 color: inherit;
                 text-decoration: none;
+                transition: color 500ms ease-in-out;
+            }
+
+            footer .copyright a.bluemwhitew:hover {
+                color: #0af;
             }
         </style>
         {% assign $title = renderData.title %}
@@ -128,7 +133,8 @@
         </main>
         <footer>
             <div class="copyright">
-                <p>Copyright <a href="https://www.bluemwhitew.com" rel="noopener" target="_blank">bluemwhitew</a> &copy; 2020</p>
+                <p>Copyright <a class="bluemwhitew" href="https://www.bluemwhitew.com" rel="noopener" target="_blank">bluemwhitew</a> &copy; 2020</p>
+                <p>AMP &#9889;&#65039; = <a href="https://www.youtube.com/watch?v=j9V78UbdzWI&t=25s" rel="noopener" target="_blank">&#9904;&#65039;</a></p>
             </div>
             <amp-analytics type="googleanalytics">
                 <script type="application/json">
