@@ -1,0 +1,156 @@
+<!doctype html>
+<html amp lang="en-gb">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Matt Walters"/>
+        <meta name="description" content="Photography by Matt Walters"/>
+        <meta name="keywords" content="bluemwhitew, matt, walters, esports, event, gaming, photographer, photography, portrait, wedding"/>
+        <meta name="language" content="english"/>
+        <meta name="rating" content="general"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="viewport" content="width=device-width, minimal-ui, minimum-scale=1, initial-scale=1"/>
+        <link rel="canonical" href="."/>
+        <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            @media (min-width: 1200px) {
+                html {
+                    font-size: 20px;
+                }
+            }
+
+            body {
+                background-color: #1b1b1b;
+                color: #fff;
+                font-display: swap;
+                font-family: Rubik, Arial, sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+            }
+
+            article,
+            aside,
+            figcaption,
+            figure,
+            footer,
+            header,
+            hgroup,
+            main,
+            nav,
+            section {
+                display: block;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .h1,
+            .h2,
+            .h3,
+            .h4,
+            .h5,
+            .h6 {
+                font-weight: 500;
+                line-height: 1.2;
+                margin-bottom: 0.5rem;
+                margin-top: 0;
+            }
+
+            h1,
+            .h1 {
+                font-size: 2.5rem;
+            }
+
+            h2,
+            .h2 {
+                font-size: 2rem;
+            }
+
+            h3,
+            .h3 {
+                font-size: 1.75rem;
+            }
+
+            h4,
+            .h4 {
+                font-size: 1.5rem;
+            }
+
+            h5,
+            .h5 {
+                font-size: 1.25rem;
+            }
+
+            h6,
+            .h6 {
+                font-size: 1rem;
+            }
+
+            p {
+                margin-bottom: 1rem;
+                margin-top: 0;
+            }
+
+            footer .copyright {
+                padding: 2rem 0;
+                text-align: center;
+            }
+
+            footer .copyright p {
+                margin-bottom: 0;
+            }
+
+            footer .copyright a {
+                color: inherit;
+                text-decoration: none;
+                transition: color 500ms ease-in-out;
+            }
+
+            footer .copyright a.bluemwhitew:hover {
+                color: #0af;
+            }
+        </style>
+        {% assign $title = renderData.title %}
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <main>
+            {{ content }}
+        </main>
+        <footer>
+            <div class="copyright">
+                <p>Copyright <a class="bluemwhitew" href="https://www.bluemwhitew.com" rel="noopener" target="_blank">bluemwhitew</a> &copy; 2020</p>
+                <p>AMP &#9889;&#65039; = <a href="https://www.youtube.com/watch?v=j9V78UbdzWI&t=25s" rel="noopener" target="_blank">&#9904;&#65039;</a></p>
+            </div>
+            <amp-analytics type="googleanalytics">
+                <script type="application/json">
+                    {
+                        "vars": {
+                            "account": "UA-30204421-4"
+                        },
+                        "triggers": {
+                            "trackPageview": {
+                                "on": "visible",
+                                "request": "pageview"
+                            }
+                        }
+                    }
+                </script>
+            </amp-analytics>
+        </footer>
+    </body>
+</html>
