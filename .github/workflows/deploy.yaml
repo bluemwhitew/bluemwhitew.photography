@@ -32,7 +32,6 @@ jobs:
       - name: Deploy
         uses: appleboy/scp-action@master
         with:
-          fingerprint: ${{ secrets.FINGERPRINT }}
           host: ${{ secrets.HOST }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
