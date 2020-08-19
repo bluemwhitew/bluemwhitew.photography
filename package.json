@@ -1,0 +1,35 @@
+{
+    "name": "bluemwhitew.photography",
+    "description": "Photography by Matt Walters",
+    "version": "1.0.0",
+    "author": "Matt Walters <bluemwhitew@hotmail.co.uk>",
+    "bugs": {
+        "url": "https://www.github.com/bluemwhitew/bluemwhitew.photography/issues"
+    },
+    "dependencies": {
+        "@11ty/eleventy": "^0.11.0"
+    },
+    "devDependencies": {
+        "@ampproject/eleventy-plugin-amp": "^0.5.2"
+    },
+    "engines": {
+        "node": ">=10.14",
+        "npm": ">=6.14"
+    },
+    "homepage": "https://bluemwhitew.photography",
+    "keywords": [
+        "11ty",
+        "bluemwhitew",
+        "eleventy",
+        "photography",
+        "static"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:bluemwhitew/bluemwhitew.photography.git"
+    },
+    "scripts": {
+        "build": "eleventy",
+        "start": "eleventy --port=1908 --serve"
+    }
+}
