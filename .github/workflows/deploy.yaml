@@ -6,9 +6,9 @@ on:
   push:
     branches:
       - master
-
 jobs:
   deploy:
+    if: github.repository == 'bluemwhitew/bluemwhitew.photography'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,8 +32,9 @@ jobs:
       - name: Deploy
         uses: appleboy/scp-action@master
         with:
+          fingerprint: ${{ secrets.FINGERPRINT }}
           host: ${{ secrets.HOST }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           source: "dist"
           target: ${{ secrets.TARGET }} # "/var/www/x1908"
