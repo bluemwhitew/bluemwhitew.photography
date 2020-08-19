@@ -4,13 +4,14 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+
 jobs:
   deploy:
     if: github.repository == 'bluemwhitew/bluemwhitew.photography'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v1
