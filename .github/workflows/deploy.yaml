@@ -4,6 +4,7 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+
 jobs:
   deploy:
     if: github.repository == 'bluemwhitew/bluemwhitew.photography'
