@@ -14,6 +14,7 @@
         <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
         <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
@@ -446,6 +447,21 @@
             <div class="copyright">
                 <p>Copyright <a href="https://www.bluemwhitew.com" rel="noopener" target="_blank">bluemwhitew</a> &copy; 2020</p>
             </div>
+            <amp-analytics type="googleanalytics">
+                <script type="application/json">
+                    {
+                        "vars": {
+                            "account": "UA-30204421-4"
+                        },
+                        "triggers": {
+                            "trackPageview": {
+                                "on": "visible",
+                                "request": "pageview"
+                            }
+                        }
+                    }
+                </script>
+            </amp-analytics>
         </footer>
     </body>
 </html>
