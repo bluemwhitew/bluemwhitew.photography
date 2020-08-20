@@ -37,5 +37,6 @@ jobs:
           overwrite: true
           port: ${{ secrets.PORT }}
           source: "dist/*"
+          strip_components: 1
           target: ${{ secrets.TARGET }} # "/var/www/x1908"
           username: ${{ secrets.USERNAME }}
