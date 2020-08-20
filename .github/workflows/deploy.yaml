@@ -34,6 +34,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           key: ${{ secrets.KEY }}
+          overwrite: true
           port: ${{ secrets.PORT }}
           source: "dist/*"
           target: ${{ secrets.TARGET }} # "/var/www/x1908"
