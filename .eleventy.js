@@ -6,6 +6,7 @@ const ampPlugin = require('@ampproject/eleventy-plugin-amp');
  * @see {@link https://www.11ty.io/docs/config|Configuration}
  */
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPassthroughCopy('src/robots.txt');
     eleventyConfig.addPlugin(ampPlugin, {
         ampCache: true,
         dir: {
