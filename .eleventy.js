@@ -1,3 +1,6 @@
+// Load Configuration
+require('dotenv').config();
+
 const ampPlugin = require('@ampproject/eleventy-plugin-amp');
 
 /**
