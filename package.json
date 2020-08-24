@@ -7,7 +7,8 @@
         "url": "https://www.github.com/bluemwhitew/bluemwhitew.photography/issues"
     },
     "dependencies": {
-        "@11ty/eleventy": "^0.11.0"
+        "@11ty/eleventy": "^0.11.0",
+        "dotenv": "^8.2.0"
     },
     "devDependencies": {
         "@ampproject/eleventy-plugin-amp": "^0.5.2"
