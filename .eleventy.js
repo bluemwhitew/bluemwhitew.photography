@@ -1,4 +1,5 @@
-const ampPlugin = require('@ampproject/eleventy-plugin-amp');
+const ampPlugin = require('@ampproject/eleventy-plugin-amp'),
+      fs = require('fs');
 
 /**
  * @param eleventyConfig
@@ -6,20 +7,38 @@ const ampPlugin = require('@ampproject/eleventy-plugin-amp');
  * @see {@link https://www.11ty.io/docs/config|Configuration}
  */
 module.exports = function (eleventyConfig) {
+    // Passthroughs
     eleventyConfig.addPassthroughCopy('src/robots.txt');
+
+    // Plugins
     eleventyConfig.addPlugin(ampPlugin, {
         ampCache: true,
         dir: {
-            output: "dist",
+            output: 'dist',
         },
         minifyCss: true,
         validation: true
     });
 
+    // Routing
+    eleventyConfig.setBrowserSyncConfig({
+        callbacks: {
+            ready: function (err, bs) {
+                bs.addMiddleware('*', (req, res) => {
+                    let error404 = fs.readFileSync('dist/404.html');
+
+                    res.write(error404);
+                    res.writeHead(404);
+                    res.end();
+                });
+            }
+        }
+    });
+
     return {
         dir: {
-            input: "src",
-            output: "dist"
+            input: 'src',
+            output: 'dist'
         },
         htmlTemplateEngine: false,
     };
