@@ -1,0 +1,75 @@
+---
+layout: layout.liquid
+pagination:
+    addAllPagesToCollections: true
+    alias: shoot
+    data: shoots
+    size: 1
+permalink: "shoots/{{ shoot.title | slug }}/"
+renderData:
+    title: "{{ shoot.title }} &mdash; bluemwhitew Photography"
+---
+
+<section class="section__title">
+    <h1>{{ shoot.title }}</h1>
+    <div>{{ shoot.content }}</div>
+</section>
+
+<section class="section__shots">
+    <ul>
+        {%- for shot in shoot.shots -%}
+            <li>
+                <figure>
+                    <amp-img alt="{{ shot.fields.title }}" height="1" layout="responsive"
+                             src="https:{{ shot.fields.file.url }}?f=center&fit=fill&fm=webp&h=1024&q=100&w=1024"
+                             width="1">
+                        <amp-img alt="Placeholder" fallback height="1" layout="responsive"
+                                 src="https://via.placeholder.com/1024"
+                                 width="1">
+                        </amp-img>
+                    </amp-img>
+                </figure>
+            </li>
+        {%- endfor -%}
+    </ul>
+</section>
+
+<style>
+    .section__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 75vh;
+        text-align: center;
+    }
+
+    .section__title h1 {
+        font-size: 3rem;
+    }
+
+    .section__shots ul {
+        display: grid;
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        list-style: none;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+
+    .section__shots figure {
+        margin: 0;
+    }
+
+    @media (min-width: 768px) {
+        .section__shots ul  {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .section__shots ul  {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+</style>
