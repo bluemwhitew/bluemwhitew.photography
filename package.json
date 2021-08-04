@@ -7,14 +7,17 @@
         "url": "https://www.github.com/bluemwhitew/bluemwhitew.photography/issues"
     },
     "dependencies": {
-        "@11ty/eleventy": "^0.11.0",
-        "@ampproject/eleventy-plugin-amp": "^0.5.3",
-        "contentful": "^7.14.6",
+        "@11ty/eleventy": "^0.12.1",
+        "@ampproject/eleventy-plugin-amp": "^0.5.5",
+        "contentful": "^8.2.1",
         "dotenv": "^8.2.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "postcss-cli": "^8.3.1",
+        "tailwindcss": "^2.2.7"
+    },
     "engines": {
-        "node": ">=10.14",
+        "node": ">=14.15",
         "npm": ">=6.14"
     },
     "homepage": "https://bluemwhitew.photography",
@@ -31,6 +34,7 @@
     },
     "scripts": {
         "build": "eleventy",
-        "start": "eleventy --port=1908 --serve"
+        "start": "eleventy --port=1908 --serve",
+        "postcss": "postcss src/assets/css/style.css --config ./postcss.config.js --output src/_includes/css/style.css"
     }
 }
