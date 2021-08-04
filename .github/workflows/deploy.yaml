@@ -1,11 +1,8 @@
 name: Deploy
 on:
-  pull_request:
-    branches:
-      - master
   push:
-    branches:
-      - master
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -19,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '10.14.x'
+          node-version: '14.15.x'
 
       - name: Cache
         uses: actions/cache@v2
