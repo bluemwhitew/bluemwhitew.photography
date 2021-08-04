@@ -1,8 +1,11 @@
 name: Deploy
 on:
+  pull_request:
+    branches:
+      - master
   push:
-    tags:
-      - 'v*'
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -27,6 +30,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
+      - run: npm run postcss
       - run: npm run build
 
       - name: Deploy
