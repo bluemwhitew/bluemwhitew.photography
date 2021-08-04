@@ -10,13 +10,13 @@ renderData:
     title: "{{ shoot.title }} &mdash; bluemwhitew Photography"
 ---
 
-<section class="section__title">
-    <h1>{{ shoot.title }}</h1>
+<section class="flex flex-col justify-center min-h-[75vh] text-center">
+    <h1 class="font-bold mb-4 text-5xl md:text-6xl">{{ shoot.title }}</h1>
     <div>{{ shoot.content }}</div>
 </section>
 
 <section class="section__shots">
-    <ul>
+    <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {%- for shot in shoot.shots -%}
             <li>
                 <figure>
@@ -33,43 +33,3 @@ renderData:
         {%- endfor -%}
     </ul>
 </section>
-
-<style>
-    .section__title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 75vh;
-        text-align: center;
-    }
-
-    .section__title h1 {
-        font-size: 3rem;
-    }
-
-    .section__shots ul {
-        display: grid;
-        gap: 0;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        list-style: none;
-        margin: 0 auto;
-        padding-left: 0;
-    }
-
-    .section__shots figure {
-        margin: 0;
-    }
-
-    @media (min-width: 768px) {
-        .section__shots ul  {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .section__shots ul  {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-</style>

@@ -1,45 +1,8 @@
-<header>
-    <a aria-label="bluemwhitew Photography" class="header-logo" href="/" title="Home">
-        <amp-img alt="Logo" height="48" src="https://www.gravatar.com/avatar/16b52d27e079c09a0e8f0dbbf3333240?s=128.png" width="48"></amp-img>
+<header class="fixed flex inset-x-0 items-center justify-between p-4 top-0 z-50">
+    <a aria-label="bluemwhitew Photography" class="flex header-logo items-center overflow-hidden" href="/" title="Home">
+        <amp-img alt="Logo" class="bg-yellow-400 rounded-full" height="48" src="https://www.gravatar.com/avatar/16b52d27e079c09a0e8f0dbbf3333240?s=128.png" width="48"></amp-img>
     </a>
-    <nav aria-label="Menu" class="header-menu">
+    <nav aria-label="Menu" class="hidden">
         {# @todo #}
     </nav>
 </header>
-
-<style>
-    header {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        left: 0;
-        padding: 1rem;
-        position: fixed;
-        right: 0;
-        top: 0;
-        z-index: 1030;
-    }
-
-    .header-logo {
-        align-items: center;
-        display: flex;
-        overflow: hidden;
-    }
-
-    .header-logo amp-img {
-        background-color: #101020;
-        border-radius: 24px;
-    }
-
-    .header-logo img {
-        transition: transform 250ms ease-in-out;
-    }
-
-    .header-logo:hover img {
-        transform: scale(1.1);
-    }
-
-    .header-menu {
-        display: none;
-    }
-</style>
