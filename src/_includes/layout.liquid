@@ -16,34 +16,13 @@
         <style>
             {% include css/style.css %}
         </style>
-        {% assign $title = renderData.title %}
-        <title>{{ title }}</title>
+        <title>{{ renderData.title }}</title>
     </head>
     <body>
-        {% include header.liquid %}
+        {% include header %}
         <main>
             {{ content }}
         </main>
-        <footer>
-            <div class="copyright py-8 text-center">
-                <p>Copyright <a class="bluemwhitew no-underline" href="https://www.bluemwhitew.com" rel="noopener" target="_blank">bluemwhitew</a> &copy; 2020</p>
-                <p>AMP &#9889;&#65039; = <a href="https://www.youtube.com/watch?v=j9V78UbdzWI" rel="noopener" target="_blank">&#9904;&#65039;</a></p>
-            </div>
-            <amp-analytics type="googleanalytics">
-                <script type="application/json">
-                    {
-                        "vars": {
-                            "account": "UA-30204421-4"
-                        },
-                        "triggers": {
-                            "trackPageview": {
-                                "on": "visible",
-                                "request": "pageview"
-                            }
-                        }
-                    }
-                </script>
-            </amp-analytics>
-        </footer>
+        {% include footer %}
     </body>
 </html>
