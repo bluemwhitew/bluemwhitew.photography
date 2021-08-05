@@ -1,4 +1,5 @@
 .idea/
 dist/
 node_modules/
+src/_includes/css/
 .env
