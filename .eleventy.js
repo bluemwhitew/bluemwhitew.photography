@@ -32,7 +32,8 @@ module.exports = function (eleventyConfig) {
                     res.end();
                 });
             }
-        }
+        },
+        ghostMode: false
     });
 
     return {
