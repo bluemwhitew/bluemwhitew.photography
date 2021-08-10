@@ -13,7 +13,11 @@ module.exports = {
                 'sans-serif'
             ]
         },
-        extend: {}
+        extend: {
+            colors: {
+                'brand-bluemwhitew': '#00aaff',
+            }
+        }
     },
     variants: {
         extend: {}

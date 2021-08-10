@@ -42,12 +42,3 @@ header .header-logo:hover img {
     opacity: 1;
     transform: translateY(0);
 }
-
-footer .copyright a {
-    color: inherit;
-    transition: color 500ms ease-in-out;
-}
-
-footer .copyright a.bluemwhitew:hover {
-    color: #0af;
-}
