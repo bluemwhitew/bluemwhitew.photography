@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-plugin-inclusive-language": "^1.0.2",
         "@ampproject/eleventy-plugin-amp": "^0.5.5",
         "contentful": "^8.2.1",
         "dotenv": "^8.2.0",
