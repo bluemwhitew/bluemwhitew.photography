@@ -10,10 +10,7 @@ renderData:
     title: "{{ shoot.title }} &mdash; bluemwhitew Photography"
 ---
 
-<section class="flex flex-col justify-center min-h-[75vh] text-center">
-    <h1 class="font-bold mb-4 text-5xl md:text-6xl">{{ shoot.title }}</h1>
-    <div>{{ shoot.content }}</div>
-</section>
+{% include shoot/hero %}
 
 <section class="section__shots">
     <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
