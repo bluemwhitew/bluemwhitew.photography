@@ -17,13 +17,11 @@ renderData:
                     <li>
                         <figure class="relative">
                             <a class="no-underline text-white" href="/shoots/{{ shoot.title | slug }}" title="{{ shoot.title }}">
-                                <amp-img alt="{{ shoot.title }}" class="bg-yellow-400" height="1" layout="responsive"
-                                         src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&fit=fill&fm=webp&h=640&q=80&w=640"
+                                <amp-img alt="{{ shoot.title }}"
+                                         height="1"
+                                         layout="responsive"
+                                         src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=640&q=80&w=640"
                                          width="1">
-                                    <amp-img alt="Placeholder" class="bg-yellow-400" fallback height="1" layout="responsive"
-                                             src="https://via.placeholder.com/640"
-                                             width="1">
-                                    </amp-img>
                                 </amp-img>
                                 <figcaption>
                                     <h5>{{ shoot.title }}</h5>

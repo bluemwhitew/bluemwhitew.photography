@@ -1,0 +1,47 @@
+<section class="bg-black h-[80vh] max-h-[960px] min-h-[540px] overflow-hidden relative">
+    <amp-img alt="{{ shoot.featuredImage.fields.title }}"
+             class="absolute amp-img-cover inset-0 opacity-75"
+             height="600"
+             layout="responsive"
+             media="(max-width: 640px)"
+             src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=600&amp;q=80&amp;w=400"
+             width="400">
+    </amp-img>
+    <amp-img alt="{{ shoot.featuredImage.fields.title }}"
+             class="absolute amp-img-cover inset-0 opacity-75"
+             height="600"
+             layout="responsive"
+             media="(min-width: 640px) and (max-width: 768px)"
+             src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=600&amp;q=80&amp;w=600"
+             width="600">
+    </amp-img>
+    <amp-img alt="{{ shoot.featuredImage.fields.title }}"
+             class="absolute amp-img-cover inset-0 opacity-75"
+             height="800"
+             layout="responsive"
+             media="(min-width: 768px) and (max-width: 1024px)"
+             src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=800&amp;q=80&amp;w=800"
+             width="800">
+    </amp-img>
+    <amp-img alt="{{ shoot.featuredImage.fields.title }}"
+             class="absolute amp-img-cover inset-0 opacity-75"
+             height="800"
+             layout="responsive"
+             media="(min-width: 1024px) and (max-width: 1280px)"
+             src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=800&amp;q=80&amp;w=1280"
+             width="1280">
+    </amp-img>
+    <amp-img alt="{{ shoot.featuredImage.fields.title }}"
+             class="absolute amp-img-cover inset-0 opacity-75"
+             height="960"
+             layout="responsive"
+             media="(min-width: 1280px)"
+             src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=960&amp;q=80&amp;w=1920"
+             width="1920">
+    </amp-img>
+    <div class="absolute bottom-0 inset-x-0">
+        <div class="container mx-auto">
+            <h1 class="font-bold px-4 py-8 md:pb-12 lg:pb-16 text-5xl text-white z-10">{{ shoot.title }}</h1>
+        </div>
+    </div>
+</section>

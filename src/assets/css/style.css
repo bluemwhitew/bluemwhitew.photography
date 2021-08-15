@@ -42,3 +42,8 @@ header .header-logo:hover img {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* AMP Specific Util. */
+.amp-img-cover img {
+    @apply object-cover;
+}
