@@ -13,14 +13,14 @@ renderData:
 {% include shoot/hero %}
 
 <section class="section__shots">
-    <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {%- for shot in shoot.shots -%}
             <li>
                 <figure>
                     <amp-img alt="{{ shot.fields.title }}"
                              height="1"
                              layout="responsive"
-                             src="https:{{ shot.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=640&q=100&w=640"
+                             src="https:{{ shot.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
                              width="1">
                     </amp-img>
                 </figure>
