@@ -20,13 +20,11 @@ renderData:
         {%- for shot in shoot.shots -%}
             <li>
                 <figure>
-                    <amp-img alt="{{ shot.fields.title }}" height="1" layout="responsive"
-                             src="https:{{ shot.fields.file.url }}?f=center&fit=fill&fm=webp&h=1024&q=100&w=1024"
+                    <amp-img alt="{{ shot.fields.title }}"
+                             height="1"
+                             layout="responsive"
+                             src="https:{{ shot.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=640&q=100&w=640"
                              width="1">
-                        <amp-img alt="Placeholder" fallback height="1" layout="responsive"
-                                 src="https://via.placeholder.com/1024"
-                                 width="1">
-                        </amp-img>
                     </amp-img>
                 </figure>
             </li>
