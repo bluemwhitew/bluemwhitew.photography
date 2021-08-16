@@ -1,5 +1,6 @@
-const ampPlugin = require('@ampproject/eleventy-plugin-amp'),
-      fs = require('fs');
+const fs = require('fs'),
+      pluginAmp = require('@ampproject/eleventy-plugin-amp'),
+      pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 
 /**
  * @param eleventyConfig
@@ -11,13 +12,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/robots.txt');
 
     // Plugins
-    eleventyConfig.addPlugin(ampPlugin, {
+    eleventyConfig.addPlugin(pluginAmp, {
         ampCache: true,
         dir: {
             output: 'dist',
         },
         minifyCss: true,
         validation: true
+    });
+    eleventyConfig.addPlugin(pluginInclusiveLanguage, {
+        templateFormats: ['liquid'],
     });
 
     // Routing
@@ -32,7 +36,8 @@ module.exports = function (eleventyConfig) {
                     res.end();
                 });
             }
-        }
+        },
+        ghostMode: false
     });
 
     return {

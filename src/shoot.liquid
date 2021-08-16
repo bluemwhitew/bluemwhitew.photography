@@ -10,23 +10,18 @@ renderData:
     title: "{{ shoot.title }} &mdash; bluemwhitew Photography"
 ---
 
-<section class="flex flex-col justify-center min-h-[75vh] text-center">
-    <h1 class="font-bold mb-4 text-5xl md:text-6xl">{{ shoot.title }}</h1>
-    <div>{{ shoot.content }}</div>
-</section>
+{% include shoot/hero %}
 
 <section class="section__shots">
-    <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {%- for shot in shoot.shots -%}
             <li>
                 <figure>
-                    <amp-img alt="{{ shot.fields.title }}" height="1" layout="responsive"
-                             src="https:{{ shot.fields.file.url }}?f=center&fit=fill&fm=webp&h=1024&q=100&w=1024"
+                    <amp-img alt="{{ shot.fields.title }}"
+                             height="1"
+                             layout="responsive"
+                             src="https:{{ shot.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
                              width="1">
-                        <amp-img alt="Placeholder" fallback height="1" layout="responsive"
-                                 src="https://via.placeholder.com/1024"
-                                 width="1">
-                        </amp-img>
                     </amp-img>
                 </figure>
             </li>

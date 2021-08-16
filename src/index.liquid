@@ -5,6 +5,13 @@ renderData:
     title: "Coming Soon &mdash; bluemwhitew Photography"
 ---
 
-<section class="flex flex-col justify-center min-h-screen text-center">
-    <h1 class="font-bold mb-4 text-6xl md:text-7xl">Coming <span class="text-opacity-5 text-white">August 2021</span></h1>
+<section class="container flex flex-col justify-center min-h-screen mx-auto text-center">
+    <h1 class="font-bold mb-8 text-5xl sm:text-6xl md:text-7xl">Coming Soon&trade;</h1>
+    <amp-date-countdown biggest-unit="hours" height="50" layout="fixed-height" timestamp-seconds="1629392400">
+        <template type="amp-mustache">
+            {% raw %}
+                <p class="font-bold text-5xl text-opacity-5 text-white">{{hh}}:{{mm}}:{{ss}}</p>
+            {% endraw %}
+        </template>
+    </amp-date-countdown>
 </section>

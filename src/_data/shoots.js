@@ -9,7 +9,8 @@ const client = contentful.createClient({
 
 module.exports = async () => {
     return client.getEntries({
-        content_type: 'shoot'
+        content_type: 'shoot',
+        order: '-fields.date'
     }).then(function (response) {
         return response.items
             .map(function (shoot) {

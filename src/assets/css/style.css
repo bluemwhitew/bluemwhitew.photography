@@ -43,11 +43,7 @@ header .header-logo:hover img {
     transform: translateY(0);
 }
 
-footer .copyright a {
-    color: inherit;
-    transition: color 500ms ease-in-out;
-}
-
-footer .copyright a.bluemwhitew:hover {
-    color: #0af;
+/* AMP Specific Util. */
+.amp-img-cover img {
+    @apply object-cover;
 }
