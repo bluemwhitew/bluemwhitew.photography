@@ -21,6 +21,9 @@ renderData:
                              height="1"
                              layout="responsive"
                              src="https:{{ shot.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
+                             srcset="https:{{ shot.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
+                                     https:{{ shot.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
+                                     https:{{ shot.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x"
                              width="1">
                     </amp-img>
                 </figure>
