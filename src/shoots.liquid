@@ -11,23 +11,28 @@ renderData:
 
 {% if shoots %}
     <section class="section__shoots">
-        <ul class="gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {%- for shoot in shoots -%}
                 {% if shoot.isPrivate != true %}
                     <li>
-                        <figure class="relative">
-                            <a class="no-underline text-white" href="/shoots/{{ shoot.title | slug }}" title="{{ shoot.title }}">
-                                <amp-img alt="{{ shoot.title }}"
-                                         height="1"
-                                         layout="responsive"
-                                         src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=640&q=80&w=640"
-                                         width="1">
-                                </amp-img>
-                                <figcaption>
-                                    <h5>{{ shoot.title }}</h5>
+                        <a class="block group no-underline relative text-white" href="/shoots/{{ shoot.title | slug }}" title="{{ shoot.title }}">
+                            <figure>
+                                {% if shoot.featuredImage.fields.file.url %}
+                                    <amp-img alt="{{ shoot.title }}"
+                                             height="1"
+                                             layout="responsive"
+                                             src="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
+                                             srcset="https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
+                                                     https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
+                                                     https:{{ shoot.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x"
+                                             width="1">
+                                    </amp-img>
+                                {% endif %}
+                                <figcaption class="absolute duration-500 flex flex-col group-hover:opacity-100 group-hover:translate-y-0 justify-center inset-4 opacity-0 text-center transition-all translate-y-4">
+                                    <h5 class="font-bold text-3xl">{{ shoot.title }}</h5>
                                 </figcaption>
-                            </a>
-                        </figure>
+                            </figure>
+                        </a>
                     </li>
                 {%- endif -%}
             {%- endfor -%}
