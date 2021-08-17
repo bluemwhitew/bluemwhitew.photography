@@ -7,14 +7,6 @@ body {
     color: #fff;
 }
 
-header .header-logo img {
-    transition: transform 250ms ease-in-out;
-}
-
-header .header-logo:hover img {
-    transform: scale(1.1);
-}
-
 .section__shoots amp-img {
     transition: opacity 500ms ease-in-out;
 }
