@@ -7,21 +7,22 @@
         </div>
     </div>
     <div class="p-8 pt-0">
-        <nav>
+        <nav class="border-b border-opacity-10 border-white pb-10">
             <ul>
                 <li class="font-bold pb-4 text-3xl">
                     <a class="duration-500 ease-in-out hover:opacity-80 text-white transition-opacity" href="/">Home</a>
                 </li>
                 <li class="font-bold pb-4 text-3xl">
-                    <a class="duration-500 ease-in-out hover:opacity-80 text-white transition-opacity" href="/shoots">Shoots</a>
+                    <a class="duration-500 ease-in-out hover:opacity-80 text-white transition-opacity" href="/collections">Collections</a>
                 </li>
-                <li class="font-bold pb-4 text-3xl">
+                <li class="font-bold hidden pb-4 text-3xl">
                     <a class="duration-500 ease-in-out hover:opacity-80 text-white transition-opacity" href="/about">About</a>
                 </li>
                 <li class="font-bold text-3xl">
-                    <a class="duration-500 ease-in-out hover:opacity-80 text-white transition-opacity" href="/contact">Contact</a>
+                    <a class="duration-500 ease-in-out hover:opacity-80 text-white transition-opacity" href="mailto:hello@bluemwhitew.photography?subject=Hello!">Contact</a>
                 </li>
             </ul>
         </nav>
+        {% include header/menu/featured-collections %}
     </div>
 </amp-sidebar>

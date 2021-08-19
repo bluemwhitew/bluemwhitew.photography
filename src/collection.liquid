@@ -1,0 +1,34 @@
+---
+layout: layout.liquid
+pagination:
+    addAllPagesToCollections: true
+    alias: collection
+    data: contentful
+    size: 1
+permalink: "collections/{{ collection.title | slug }}/"
+renderData:
+    metaRobots: "noindex, nofollow"
+    title: "{{ collection.title }} &mdash; bluemwhitew Photography"
+---
+
+{% include collection/hero %}
+
+<section>
+    <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {%- for image in collection.images -%}
+            <li>
+                <figure>
+                    <amp-img alt="{{ image.fields.title }}"
+                             height="1"
+                             layout="responsive"
+                             src="https:{{ image.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
+                             srcset="https:{{ image.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
+                                     https:{{ image.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
+                                     https:{{ image.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x"
+                             width="1">
+                    </amp-img>
+                </figure>
+            </li>
+        {%- endfor -%}
+    </ul>
+</section>

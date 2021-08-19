@@ -9,12 +9,12 @@ const client = contentful.createClient({
 
 module.exports = async () => {
     return client.getEntries({
-        content_type: 'shoot',
+        content_type: 'collection',
         order: '-fields.date'
     }).then(function (response) {
         return response.items
-            .map(function (shoot) {
-                return shoot.fields;
+            .map(function (collection) {
+                return collection.fields;
             });
     }).catch(console.error);
 };
