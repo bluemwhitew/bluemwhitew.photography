@@ -3,7 +3,7 @@
         "text": "Share on Twitter",
         "url": "https://www.twitter.com/intent/tweet?hashtags=worldphotographyday&text=Happy World Photography Day! 📸&url=https%3A%2F%2Fbluemwhitew.photography%3Futm_campaign%3Dworld-photography-day%26utm_medium%3Dtwitter%26utm_source%3Dfooter-alert"
     },
-    "isEnabled": true,
+    "isEnabled": false,
     "message": {
         "text": "It's World Photography Day!",
         "textMd": "<strong>Fun Fact</strong>: Today is World Photography Day!"
