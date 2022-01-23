@@ -32,7 +32,7 @@ jobs:
           echo "CONTENTFUL_ENVIRONMENT=${{ secrets.CONTENTFUL_ENVIRONMENT }}" >> .env
           echo "CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}" >> .env
       - run: |
-          echo "Build #$GITHUB_REF" > ./src/_includes/footer/build-information/information.liquid
+          echo "Build #$GITHUB_SHA" > ./src/_includes/footer/build-information/information.liquid
       - run: npm ci
       - run: npm run postcss
       - run: npm run build
