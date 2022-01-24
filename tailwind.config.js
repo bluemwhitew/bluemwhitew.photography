@@ -1,10 +1,8 @@
 module.exports = {
-    darkMode: false,
-    mode: 'jit', // 'jit'
-    plugins: [],
-    purge: [
+    content: [
         './src/**/*.{html,liquid}'
     ],
+    plugins: [],
     theme: {
         fontFamily: {
             sans: [
@@ -19,8 +17,5 @@ module.exports = {
                 'brand-twitter': '#1da1f2'
             }
         }
-    },
-    variants: {
-        extend: {}
     }
 }
