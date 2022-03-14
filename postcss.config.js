@@ -1,5 +1,6 @@
 module.exports = {
     plugins: {
-        tailwindcss: {}
+        tailwindcss: {},
+        ...(process.env.NODE_ENV === 'production' ? { 'postcss-minify': {} } : {})
     }
 }
