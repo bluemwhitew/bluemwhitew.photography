@@ -15,6 +15,14 @@ module.exports = {
             colors: {
                 'brand-bluemwhitew': '#00aaff',
                 'brand-twitter': '#1da1f2'
+            },
+            gridTemplateColumns: {
+                'media-relaxed': '50% 1fr',
+                'media-loose': '60% 1fr'
+            },
+            gridTemplateRows: {
+                'media-normal': 'repeat(3, 60vh)',
+                'media-loose': 'repeat(2, minmax(20rem, 1fr))'
             }
         }
     }
