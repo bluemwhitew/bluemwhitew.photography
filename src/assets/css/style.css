@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 /* AMP Specific Util. */
-.amp-img-cover img {
-    @apply object-cover;
+@layer utilities {
+    .amp-img-object-cover img {
+        @apply object-cover;
+    }
 }
