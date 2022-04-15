@@ -7,8 +7,11 @@ pagination:
     size: 1
 permalink: "collections/{{ collection.title | slug }}/"
 renderData:
-    metaRobots: "noindex, nofollow"
-    title: "{{ collection.title }} &mdash; bluemwhitew Photography"
+    metaDescription: "{{ collection.metaDescription }}"
+    metaKeywords: "{{ collection.metaKeywords }}"
+    metaRating: "{{ collection.metaRating }}"
+    metaRobots: "{{ collection.metaRobots }}"
+    title: "{{ collection.title }}"
 ---
 
 {% include "collection/hero" %}
