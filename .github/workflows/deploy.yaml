@@ -7,6 +7,8 @@ on:
 
 jobs:
   deploy:
+    env:
+      NODE_ENV: production
     if: github.repository == 'bluemwhitew/bluemwhitew.photography'
     runs-on: ubuntu-latest
     steps:
