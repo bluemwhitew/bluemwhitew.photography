@@ -37,7 +37,7 @@ module.exports = function (eleventyConfig) {
                 });
             }
         },
-        ghostMode: false
+        ghostMode: true
     });
 
     return {
