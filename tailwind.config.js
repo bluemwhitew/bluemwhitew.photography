@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
         './src/**/*.{html,liquid}'
@@ -6,6 +7,7 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: [
+                'Noto Sans JP',
                 'Noto Sans',
                 'Arial',
                 'sans-serif'
