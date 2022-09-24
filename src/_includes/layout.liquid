@@ -27,15 +27,15 @@
         <link rel="preconnect dns-prefetch" href="https://images.ctfassets.net/" crossorigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans+JP:wght@400;700" rel="stylesheet"/>
         <style>
-            {% include "css/style.css" %}
+            {% render "css/style.css" %}
         </style>
         <title>{{ renderData.title }}</title>
     </head>
     <body class="bg-gray-900 text-white">
-        {% include "header" %}
+        {% render "header" %}
         <main>
             {{ content }}
         </main>
-        {% include "footer" %}
+        {% render "footer" %}
     </body>
 </html>
