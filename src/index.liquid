@@ -5,17 +5,26 @@ renderData:
     title: "Coming Soon &mdash; bluemwhitew Photography"
 ---
 
-<section class="container flex flex-col justify-center min-h-screen mx-auto text-center">
-    <h1 class="font-bold mb-8 text-5xl sm:text-6xl md:text-7xl">Welcome!</h1>
-    <p class="mb-4 text-lg">Guess which self-proclaimed legendary genius didn't bother to write content for launch... 🙈</p>
-    <p class="font-bold mb-12 text-lg">
-        <a class="text-white" href="/collections">
-            <span>Browse Collections</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 inline-block w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-        </a>
-    </p>
+<section class="bg-black flex flex-col justify-center min-h-screen mx-auto relative text-center">
+    <amp-img alt="Photo by Hanny Naibaho on Unsplash"
+             class="absolute amp-img-object-cover inset-0 opacity-50"
+             height="9"
+             layout="responsive"
+             src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1920"
+             width="16">
+    </amp-img>
+    <div class="p-8 md:p-16 sticky top-16 z-10">
+        <h1 class="font-bold leading-normal sm:leading-normal md:leading-normal mb-8 text-5xl sm:text-6xl md:text-7xl text-white">Happy World<br/>Photography Day!</h1>
+        <div class="gap-4 grid mb-12 sm:flex sm:justify-center">
+            <a href="/collections" class="font-bold group inline-flex items-center justify-center px-6 py-2 text-lg text-white transition">
+                <span>Browse Collections</span>
+                <svg aria-hidden="true" class="mt-0.5 ml-2 -mr-1 stroke-current stroke-2" fill="none" height="12" viewBox="0 0 10 10" width="12">
+                    <path class="opacity-0 transition group-hover:opacity-100" d="M0 5h7"/>
+                    <path class="transition-transform group-hover:translate-x-3px" d="M1 1l4 4-4 4"/>
+                </svg>
+            </a>
+        </div>
+    </div>
 </section>
 
 <section class="grid grid-cols-1 md:grid-cols-media-relaxed lg:grid-cols-media-loose grid-rows-media-normal md:grid-rows-media-loose min-h-screen">
