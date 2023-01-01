@@ -11,11 +11,11 @@ renderData:
     title: "{{ collection.title }} &mdash; bluemwhitew Photography"
 ---
 
-{% include "collection/hero" %}
+{% render "collection/hero" %}
 
 <section>
     <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {%- for image in collection.images -%}
+        {% for image in collection.images %}
             <li>
                 <figure>
                     <amp-img alt="{{ image.fields.title }}"
@@ -30,6 +30,6 @@ renderData:
                     </amp-img>
                 </figure>
             </li>
-        {%- endfor -%}
+        {% endfor %}
     </ul>
 </section>

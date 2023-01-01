@@ -7,8 +7,8 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: [
-                'Noto Sans JP',
-                'Noto Sans',
+                '"Noto Sans JP"',
+                '"Noto Sans"',
                 'Arial',
                 'sans-serif'
             ]

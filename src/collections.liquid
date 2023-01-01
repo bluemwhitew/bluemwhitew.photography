@@ -12,7 +12,7 @@ renderData:
 {% if contentful %}
     <section>
         <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {%- for collection in contentful -%}
+            {% for collection in contentful %}
                 <li>
                     {% if collection.isPrivate != true %}
                         <a class="block group no-underline relative text-white" href="/collections/{{ collection.title | slug }}" title="{{ collection.title }}">
@@ -57,7 +57,7 @@ renderData:
                         </figure>
                     {% endif %}
                 </li>
-            {%- endfor -%}
+            {% endfor %}
         </ul>
     </section>
-{%- endif -%}
+{% endif %}
