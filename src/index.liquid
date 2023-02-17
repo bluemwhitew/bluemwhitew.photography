@@ -30,10 +30,10 @@ renderData:
 {% if contentful %}
     <section class="mx-4 md:mx-12 lg:mx-20 my-20 lg:mb-12">
         <h2 class="sr-only">Featured Collections</h2>
-        <ul class="grid lg:gap-x-20 lg:grid-cols-12">
+        <ul class="gap-12 grid lg:gap-x-20 lg:grid-cols-12">
             {% for collection in contentful %}
                 {% if collection.isFeatureHome %}
-                    <li class="col-span-4 mb-12">
+                    <li class="lg:col-span-4">
                         <a class="block duration-500 hover:opacity-50 transition-opacity"
                            href="/collections/{{ collection.title | slug }}"
                            title="{{ collection.title }}">
