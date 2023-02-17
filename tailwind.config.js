@@ -25,6 +25,9 @@ module.exports = {
             gridTemplateRows: {
                 'media-normal': 'repeat(3, 60vh)',
                 'media-loose': 'repeat(2, minmax(20rem, 1fr))'
+            },
+            translate: {
+                '3px': '3px'
             }
         }
     }
