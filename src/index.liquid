@@ -34,11 +34,11 @@ renderData:
             {% for collection in contentful %}
                 {% if collection.isFeatureHome %}
                     <li class="lg:col-span-4">
-                        <a class="block duration-500 hover:opacity-50 transition-opacity"
+                        <a class="block duration-500 transition-opacity hover:opacity-50"
                            href="/collections/{{ collection.title | slug }}"
                            title="{{ collection.title }}">
                             <amp-img alt="{{ collection.title }}"
-                                     class="amp-img-object-cover mb-4"
+                                     class="amp-img-object-cover mb-4 rounded-lg"
                                      height="9"
                                      layout="responsive"
                                      src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fm=webp&amp;h=720&amp;q=80&amp;w=1280"
