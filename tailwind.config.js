@@ -14,6 +14,9 @@ module.exports = {
             ]
         },
         extend: {
+            backgroundImage: {
+                'noise': 'url("/assets/img/noise.png")',
+            },
             colors: {
                 'brand-bluemwhitew': '#00aaff',
                 'brand-twitter': '#1da1f2'
