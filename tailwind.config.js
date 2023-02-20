@@ -14,6 +14,9 @@ module.exports = {
             ]
         },
         extend: {
+            backgroundImage: {
+                'noise': 'url("/assets/img/noise.png")',
+            },
             colors: {
                 'brand-bluemwhitew': '#00aaff',
                 'brand-twitter': '#1da1f2'
@@ -25,6 +28,9 @@ module.exports = {
             gridTemplateRows: {
                 'media-normal': 'repeat(3, 60vh)',
                 'media-loose': 'repeat(2, minmax(20rem, 1fr))'
+            },
+            translate: {
+                '3px': '3px'
             }
         }
     }
