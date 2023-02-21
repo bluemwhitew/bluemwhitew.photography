@@ -22,21 +22,21 @@
             <meta name="robots" content="index, follow"/>
         {% endif %}
         <meta name="viewport" content="width=device-width, minimal-ui, minimum-scale=1, initial-scale=1"/>
-        <link rel="canonical" href="."/>
+        <link rel="canonical" href="{{ page.url }}"/>
         <link rel="icon" href="data:image/svg+xml,<svg viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22><text font-size=%2290%22 y=%22.9em%22>📷</text></svg>"/>
         <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
         <link rel="preconnect dns-prefetch" href="https://images.ctfassets.net/" crossorigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;700" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans+JP:wght@400;700" rel="stylesheet"/>
         <style>
-            {% include "css/style.css" %}
+            {% render "css/style.css" %}
         </style>
         <title>{{ renderData.title }} &mdash; bluemwhitew Photography</title>
     </head>
-    <body class="bg-gray-900 text-white">
-        {% include "header" %}
+    <body class="bg-zinc-900 bg-noise text-white">
+        {% render "header" %}
         <main>
             {{ content }}
         </main>
-        {% include "footer" %}
+        {% render "footer" %}
     </body>
 </html>

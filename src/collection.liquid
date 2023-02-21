@@ -14,14 +14,15 @@ renderData:
     title: "{{ collection.title }}"
 ---
 
-{% include "collection/hero" %}
+{% render "collection/hero", collection: collection %}
 
 <section>
     <ul class="gap-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {%- for image in collection.images -%}
+        {% for image in collection.images %}
             <li>
                 <figure>
                     <amp-img alt="{{ image.fields.title }}"
+                             class="cursor-pointer duration-500 hover:opacity-50 transition-opacity"
                              height="1"
                              layout="responsive"
                              lightbox
@@ -33,6 +34,6 @@ renderData:
                     </amp-img>
                 </figure>
             </li>
-        {%- endfor -%}
+        {% endfor %}
     </ul>
 </section>

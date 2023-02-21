@@ -9,6 +9,7 @@ const fs = require('fs'),
  */
 module.exports = function (eleventyConfig) {
     // Passthroughs
+    eleventyConfig.addPassthroughCopy('src/assets/img');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
 
     // Plugins
@@ -37,7 +38,7 @@ module.exports = function (eleventyConfig) {
                 });
             }
         },
-        ghostMode: false
+        ghostMode: true
     });
 
     return {

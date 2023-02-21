@@ -7,19 +7,25 @@ on:
 
 jobs:
   deploy:
+    env:
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      CONTENTFUL_ENVIRONMENT: ${{ secrets.CONTENTFUL_ENVIRONMENT }}
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      NODE_ENV: production
     if: github.repository == 'bluemwhitew/bluemwhitew.photography'
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: '14.15.x'
+          node-version: '16.15.x'
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           path: ~/.npm
@@ -27,18 +33,13 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: |
-          echo "# Contentful" > .env
-          echo "CONTENTFUL_ACCESS_TOKEN=${{ secrets.CONTENTFUL_ACCESS_TOKEN }}" >> .env
-          echo "CONTENTFUL_ENVIRONMENT=${{ secrets.CONTENTFUL_ENVIRONMENT }}" >> .env
-          echo "CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}" >> .env
-      - run: |
           echo "Build #$GITHUB_SHA" > ./src/_includes/footer/build-information/information.liquid
       - run: npm ci
       - run: npm run postcss
       - run: npm run build
 
       - name: Deploy
-        uses: appleboy/scp-action@v0.1.1
+        uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.HOST }}
           key: ${{ secrets.KEY }}
