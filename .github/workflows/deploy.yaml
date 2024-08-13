@@ -20,23 +20,16 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16.15.x'
-
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          path: ~/.npm
-          restore-keys: |
-            ${{ runner.os }}-node-
-
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+          node-version: '20.16'
       - run: |
-          echo "Build #$GITHUB_SHA" > ./src/_includes/footer/build-information/information.liquid
-      - run: npm ci
-      - run: npm run postcss
-      - run: npm run build
+          echo "Build #$GITHUB_SHA" > ${{ github.workspace }}/src/_includes/footer/build-information/information.liquid
+          npm ci
+          npm run postcss
+          npm run build
 
       - name: Deploy
         uses: appleboy/scp-action@v0.1.3
