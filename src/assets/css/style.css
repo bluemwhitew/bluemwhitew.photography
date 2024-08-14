@@ -4,6 +4,10 @@
 
 /* AMP Specific Util. */
 @layer utilities {
+    amp-img img {
+        @apply pointer-events-none;
+    }
+
     .amp-img-object-cover img {
         @apply object-cover;
     }
