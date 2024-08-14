@@ -1,4 +1,10 @@
 ---
+eleventyComputed:
+    metaDescription: "{{ collection.metaDescription }}"
+    metaKeywords: "{{ collection.metaKeywords }}"
+    metaRating: "{{ collection.metaRating }}"
+    metaRobots: "{{ collection.metaRobots }}"
+    title: "{{ collection.title }}"
 layout: layout.liquid
 pagination:
     addAllPagesToCollections: true
@@ -6,12 +12,6 @@ pagination:
     data: contentful
     size: 1
 permalink: "collections/{{ collection.title | slug }}/"
-renderData:
-    metaDescription: "{{ collection.metaDescription }}"
-    metaKeywords: "{{ collection.metaKeywords }}"
-    metaRating: "{{ collection.metaRating }}"
-    metaRobots: "{{ collection.metaRobots }}"
-    title: "{{ collection.title }}"
 ---
 
 {% render "collection/hero", collection: collection %}

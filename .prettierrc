@@ -1,0 +1,9 @@
+{
+    "embeddedSingleQuote": false,
+    "liquidSingleQuote": false,
+    "plugins": [
+        "@shopify/prettier-plugin-liquid",
+        "prettier-plugin-tailwindcss"
+    ],
+    "tabWidth": 4
+}

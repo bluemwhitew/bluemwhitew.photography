@@ -3,21 +3,21 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="author" content="Matt Walters"/>
-        {% if renderData.metaDescription %}
-            <meta name="description" content="{{ renderData.metaDescription }}"/>
+        {% if metaDescription %}
+            <meta name="description" content="{{ metaDescription }}"/>
         {% endif %}
         <meta name="generator" content="Eleventy"/>
-        {% if renderData.metaKeywords %}
-            <meta name="keywords" content="{{ renderData.metaKeywords }}"/>
+        {% if metaKeywords %}
+            <meta name="keywords" content="{{ metaKeywords }}"/>
         {% endif %}
         <meta name="language" content="english"/>
-        {% if renderData.metaRating %}
-            <meta name="rating" content="{{ renderData.metaRating }}"/>
+        {% if metaRating %}
+            <meta name="rating" content="{{ metaRating }}"/>
         {% else %}
             <meta name="rating" content="general"/>
         {% endif %}
-        {% if renderData.metaRobots %}
-            <meta name="robots" content="{{ renderData.metaRobots }}"/>
+        {% if metaRobots %}
+            <meta name="robots" content="{{ metaRobots }}"/>
         {% else %}
             <meta name="robots" content="index, follow"/>
         {% endif %}
@@ -30,7 +30,7 @@
         <style>
             {% render "css/style.css" %}
         </style>
-        <title>{{ renderData.title }} &mdash; bluemwhitew Photography</title>
+        <title>{{ title }} &mdash; bluemwhitew Photography</title>
     </head>
     <body class="bg-zinc-900 bg-noise text-white">
         {% render "header" %}
