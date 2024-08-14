@@ -9,6 +9,7 @@
     "dependencies": {
         "@11ty/eleventy": "^2.0.1",
         "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
+        "@11ty/eleventy-server-browsersync": "^1.0.2",
         "@ampproject/eleventy-plugin-amp": "^0.5.8",
         "contentful": "^10.13.2",
         "dotenv": "^16.4.5",
