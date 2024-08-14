@@ -1,5 +1,4 @@
-const fs = require('fs'),
-      pluginAmp = require('@ampproject/eleventy-plugin-amp'),
+const pluginAmp = require('@ampproject/eleventy-plugin-amp'),
       pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 
 /**
@@ -25,19 +24,8 @@ module.exports = function (eleventyConfig) {
         templateFormats: ['liquid'],
     });
 
-    // Routing
-    eleventyConfig.setBrowserSyncConfig({
-        callbacks: {
-            ready: function (err, bs) {
-                bs.addMiddleware('*', (req, res) => {
-                    let error404 = fs.readFileSync('dist/404.html');
-
-                    res.write(error404);
-                    res.writeHead(404);
-                    res.end();
-                });
-            }
-        },
+    eleventyConfig.setServerOptions({
+        module: '@11ty/eleventy-server-browsersync',
         ghostMode: true
     });
 
