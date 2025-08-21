@@ -25,7 +25,7 @@ jobs:
       - run: |
           echo "Build #$GITHUB_SHA" > ${{ github.workspace }}/src/_includes/footer/build-information/information.liquid
           npm ci
-          npm run postcss
+          npm run tailwind:build
           npm run build
 
       - name: Deploy
