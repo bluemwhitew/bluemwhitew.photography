@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const preview = ['1', 'true'].includes((process.env.CONTENTFUL_PREVIEW).toLowerCase());
+const preview = ['1', 'true'].includes((process.env.CONTENTFUL_PREVIEW || '').toLowerCase());
 const contentful = require('contentful');
 const client = contentful.createClient({
     accessToken: preview
