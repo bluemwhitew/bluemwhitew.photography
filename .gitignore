@@ -1,5 +1,5 @@
 .idea/
 dist/
 node_modules/
-src/_includes/css/
+src/assets/css/tailwind.css
 .env

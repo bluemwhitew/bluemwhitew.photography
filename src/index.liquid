@@ -7,13 +7,18 @@ permalink: "/"
 ---
 
 <section class="bg-black flex flex-col justify-center min-h-screen mx-auto relative text-center">
-    <amp-img alt="Photo by Hanny Naibaho on Unsplash"
-             class="absolute amp-img-object-cover inset-0 opacity-50"
-             height="9"
-             layout="responsive"
-             src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1920"
-             width="16">
-    </amp-img>
+    <img alt="Photo by Hanny Naibaho on Unsplash"
+         class="absolute inset-0 w-full h-full object-cover opacity-50"
+         decoding="async"
+         fetchpriority="high"
+         loading="eager"
+         sizes="100vw"
+         src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=1080&q=80&w=1920"
+         srcset="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=800&q=80&w=640 640w,
+                 https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=768&q=80&w=1024 1024w,
+                 https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=960&q=80&w=1440 1440w,
+                 https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=1080&q=80&w=1920 1920w"
+    />
     <div class="p-8 md:p-16 sticky top-16 z-10">
         <h1 class="font-bold leading-normal sm:leading-normal md:leading-normal mb-8 text-5xl sm:text-6xl md:text-7xl text-white">Esports and Event<br/>Photography</h1>
         <div class="gap-4 grid mb-12 sm:flex sm:justify-center">
@@ -38,13 +43,9 @@ permalink: "/"
                         <a class="block duration-500 transition-opacity hover:opacity-50"
                            href="/collections/{{ collection.title | slug }}"
                            title="{{ collection.title }}">
-                            <amp-img alt="{{ collection.title }}"
-                                     class="amp-img-object-cover mb-4 rounded-lg"
-                                     height="9"
-                                     layout="responsive"
-                                     src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fm=webp&amp;h=720&amp;q=80&amp;w=1280"
-                                     width="16">
-                            </amp-img>
+                            <img alt="{{ collection.title }}"
+                                 class="object-cover mb-4 rounded-lg"
+                                 src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fm=webp&amp;h=720&amp;q=80&amp;w=1280"/>
                             <div>
                                 <span class="block font-medium mb-2 text-xs tracking-widest uppercase">{{ collection.category }}</span>
                                 <h3 class="font-bold mb-4 text-2xl lg:text-3xl">{{ collection.title }}</h3>

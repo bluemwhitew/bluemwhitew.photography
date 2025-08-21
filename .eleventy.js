@@ -1,5 +1,3 @@
-const pluginAmp = require('@ampproject/eleventy-plugin-amp');
-
 /**
  * @param eleventyConfig
  * @returns {{dir: {output: string, input: string}}}
@@ -7,18 +5,9 @@ const pluginAmp = require('@ampproject/eleventy-plugin-amp');
  */
 module.exports = function (eleventyConfig) {
     // Passthroughs
+    eleventyConfig.addPassthroughCopy('src/assets/css/tailwind.css');
     eleventyConfig.addPassthroughCopy('src/assets/img');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
-
-    // Plugins
-    eleventyConfig.addPlugin(pluginAmp, {
-        ampCache: true,
-        dir: {
-            output: 'dist',
-        },
-        minifyCss: true,
-        validation: true
-    });
 
     eleventyConfig.setServerOptions({
         module: '@11ty/eleventy-server-browsersync',
