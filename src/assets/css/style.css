@@ -31,3 +31,8 @@
         @apply pointer-events-none;
     }
 }
+
+/* View Transitions */
+@view-transition {
+    navigation: auto;
+}
