@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AMP Specific Util. */
-@layer utilities {
-    amp-img img {
+@layer base {
+    img {
         @apply pointer-events-none;
-    }
-
-    .amp-img-object-cover img {
-        @apply object-cover;
     }
 }

@@ -9,7 +9,6 @@
     "dependencies": {
         "@11ty/eleventy": "^2.0.1",
         "@11ty/eleventy-server-browsersync": "^1.0.2",
-        "@ampproject/eleventy-plugin-amp": "^0.5.8",
         "contentful": "^10.13.2",
         "dotenv": "^16.4.5",
         "postcss-cli": "^11.0.0",
@@ -40,6 +39,6 @@
     "scripts": {
         "build": "eleventy",
         "start": "eleventy --port=1908 --serve",
-        "postcss": "postcss src/assets/css/style.css --config ./postcss.config.js --output src/_includes/css/style.css"
+        "postcss": "postcss src/assets/css/style.css --config ./postcss.config.js --output src/assets/css/tailwind.css"
     }
 }
