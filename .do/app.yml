@@ -2,6 +2,20 @@ domains:
   - domain: bluemwhitew.photography
     type: PRIMARY
     zone: bluemwhitew.photography
+envs:
+  - key: CONTENTFUL_ACCESS_TOKEN_DELIVERY_API
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: CONTENTFUL_ACCESS_TOKEN_PREVIEW_API
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: CONTENTFUL_ENVIRONMENT
+    scope: RUN_AND_BUILD_TIME
+  - key: CONTENTFUL_SPACE_ID
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: GOOGLE_TAG_MANAGER_TAG_ID
+    scope: RUN_AND_BUILD_TIME
 ingress:
   rules:
     - component:
