@@ -1,7 +1,7 @@
 {
     "name": "bluemwhitew.photography",
     "description": "Photography by Matt Walters",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "author": "Matt Walters <bluemwhitew@hotmail.co.uk>",
     "bugs": {
         "url": "https://www.github.com/bluemwhitew/bluemwhitew.photography/issues"
@@ -22,8 +22,8 @@
         "prettier-plugin-tailwindcss": "^0.6.6"
     },
     "engines": {
-        "node": ">=20.16",
-        "npm": ">=10.8"
+        "node": ">=22.18",
+        "npm": ">=10.9"
     },
     "homepage": "https://bluemwhitew.photography",
     "keywords": [
