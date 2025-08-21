@@ -21,7 +21,7 @@ jobs:
         with:
           cache: 'npm'
           cache-dependency-path: package-lock.json
-          node-version: '20.16'
+          node-version: '22.18'
       - run: |
           echo "Build #$GITHUB_SHA" > ${{ github.workspace }}/src/_includes/footer/build-information/information.liquid
           npm ci

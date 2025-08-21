@@ -1,10 +1,14 @@
 require('dotenv').config();
 
+const preview = ['1', 'true'].includes((process.env.CONTENTFUL_PREVIEW).toLowerCase());
 const contentful = require('contentful');
 const client = contentful.createClient({
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    accessToken: preview
+        ? process.env.CONTENTFUL_ACCESS_TOKEN_PREVIEW_API
+        : process.env.CONTENTFUL_ACCESS_TOKEN_DELIVERY_API,
     environment: process.env.CONTENTFUL_ENVIRONMENT,
-    space: process.env.CONTENTFUL_SPACE_ID
+    space: process.env.CONTENTFUL_SPACE_ID,
+    host: preview ? 'preview.contentful.com' : undefined,
 });
 
 module.exports = async () => {
