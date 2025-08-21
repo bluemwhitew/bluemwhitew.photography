@@ -16,6 +16,10 @@ static_sites:
       npm run tailwind:build
       npm run build
     environment_slug: node-js
+    envs:
+      - key: NPM_CONFIG_PRODUCTION
+        scope: BUILD_TIME
+        value: "true"
     github:
       branch: master
       deploy_on_push: true
