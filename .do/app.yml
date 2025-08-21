@@ -1,0 +1,25 @@
+domains:
+  - domain: bluemwhitew.photography
+    type: PRIMARY
+    zone: bluemwhitew.photography
+ingress:
+  rules:
+    - component:
+        name: bluemwhitew-photography
+      match:
+        path:
+          prefix: /
+name: bluemwhitew-photography
+region: lon
+static_sites:
+  - build_command: |
+      npm run tailwind:build
+      npm run build
+    environment_slug: node-js
+    github:
+      branch: master
+      deploy_on_push: true
+      repo: bluemwhitew/bluemwhitew.photography
+    name: bluemwhitew-photography
+    output_dir: dist
+    source_dir: /
