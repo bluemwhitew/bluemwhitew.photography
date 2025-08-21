@@ -15,8 +15,8 @@
                             <span class="hidden md:inline">{{ alert.message.textMd }}</span>
                         </p>
                     </div>
-                    <div class="flex-shrink-0 mt-2 order-3 w-full sm:mt-0 sm:order-2 sm:w-auto">
-                        <a class="bg-white border border-transparent flex font-medium items-center justify-center px-4 py-2 rounded-full shadow-sm text-brand-twitter text-sm hover:bg-gray-50"
+                    <div class="shrink-0 mt-2 order-3 w-full sm:mt-0 sm:order-2 sm:w-auto">
+                        <a class="bg-white border border-transparent flex font-medium items-center justify-center px-4 py-2 rounded-full shadow-xs text-brand-twitter text-sm hover:bg-gray-50"
                            href="{{ alert.button.url }}"
                            rel="nofollow"
                            target="_blank"
@@ -24,8 +24,8 @@
                             <span>{{ alert.button.text }}</span>
                         </a>
                     </div>
-                    <div class="flex-shrink-0 order-2 sm:ml-3 sm:order-3">
-                        <button class="flex -mr-1 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white hover:bg-opacity-10 hover:bg-white sm:-mr-2" on="tap:footer-alert.hide" role="button" title="Close" type="button">
+                    <div class="shrink-0 order-2 sm:ml-3 sm:order-3">
+                        <button class="flex -mr-1 p-2 rounded-md focus:outline-hidden focus:ring-2 focus:ring-white hover:bg-opacity-10 hover:bg-white sm:-mr-2" on="tap:footer-alert.hide" role="button" title="Close" type="button">
                             <span class="sr-only">Close</span>
                             <svg aria-hidden="true" class="h-6 text-white w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
