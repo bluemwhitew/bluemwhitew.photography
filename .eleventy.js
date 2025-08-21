@@ -5,6 +5,7 @@
  */
 module.exports = function (eleventyConfig) {
     // Passthroughs
+    eleventyConfig.addPassthroughCopy('src/assets/css/tailwind.css');
     eleventyConfig.addPassthroughCopy('src/assets/img');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
 

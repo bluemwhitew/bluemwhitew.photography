@@ -39,6 +39,6 @@
     "scripts": {
         "build": "eleventy",
         "start": "eleventy --port=1908 --serve",
-        "postcss": "postcss src/assets/css/style.css --config ./postcss.config.js --output src/_includes/css/style.css"
+        "postcss": "postcss src/assets/css/style.css --config ./postcss.config.js --output src/assets/css/tailwind.css"
     }
 }
