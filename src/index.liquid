@@ -5,26 +5,41 @@ eleventyComputed:
 layout: layout.liquid
 permalink: "/"
 ---
-
-<section class="bg-black flex flex-col justify-center min-h-screen mx-auto relative text-center">
-    <img alt="Photo by Hanny Naibaho on Unsplash"
-         class="absolute inset-0 w-full h-full object-cover opacity-50"
-         decoding="async"
-         fetchpriority="high"
-         loading="eager"
-         sizes="100vw"
-         src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=1080&q=80&w=1920"
-         srcset="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=800&q=80&w=640 640w,
-                 https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=768&q=80&w=1024 1024w,
-                 https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=960&q=80&w=1440 1440w,
-                 https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=1080&q=80&w=1920 1920w"
-    />
-    <div class="p-8 md:p-16 sticky top-16 z-10">
-        <h1 class="font-bold leading-normal sm:leading-normal md:leading-normal mb-8 text-5xl sm:text-6xl md:text-7xl text-white">Esports and Event<br/>Photography</h1>
-        <div class="gap-4 grid mb-12 sm:flex sm:justify-center">
-            <a href="/collections" class="font-bold group inline-flex items-center justify-center px-6 py-2 text-lg text-white transition">
+<section class="relative mx-auto flex min-h-screen flex-col justify-center bg-black text-center">
+    <img
+        alt="Photo by Hanny Naibaho on Unsplash"
+        class="absolute inset-0 h-full w-full object-cover opacity-50"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        sizes="100vw"
+        src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=1080&q=80&w=1920"
+        srcset="
+            https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=800&q=80&w=640 640w,
+            https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=768&q=80&w=1024 1024w,
+            https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=960&q=80&w=1440 1440w,
+            https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&h=1080&q=80&w=1920 1920w
+        "
+    >
+    <div class="sticky top-16 z-10 p-8 md:p-16">
+        <h1 class="mb-8 text-5xl leading-normal font-bold text-white sm:text-6xl sm:leading-normal md:text-7xl md:leading-normal">
+            Esports and Event<br>
+            Photography
+        </h1>
+        <div class="mb-12 grid gap-4 sm:flex sm:justify-center">
+            <a
+                href="/collections"
+                class="group inline-flex items-center justify-center px-6 py-2 text-lg font-bold text-white transition"
+            >
                 <span>Browse Collections</span>
-                <svg aria-hidden="true" class="mt-0.5 ml-2 -mr-1 stroke-current stroke-2" fill="none" height="12" viewBox="0 0 10 10" width="12">
+                <svg
+                    aria-hidden="true"
+                    class="mt-0.5 -mr-1 ml-2 stroke-current stroke-2"
+                    fill="none"
+                    height="12"
+                    viewBox="0 0 10 10"
+                    width="12"
+                >
                     <path class="opacity-0 transition group-hover:opacity-100" d="M0 5h7"/>
                     <path class="transition-transform group-hover:translate-x-3px" d="M1 1l4 4-4 4"/>
                 </svg>
@@ -34,21 +49,27 @@ permalink: "/"
 </section>
 
 {% if contentful %}
-    <section class="mx-4 md:mx-12 lg:mx-20 my-20 lg:mb-12">
+    <section class="mx-4 my-20 md:mx-12 lg:mx-20 lg:mb-12">
         <h2 class="sr-only">Featured Collections</h2>
-        <ul class="gap-12 grid lg:gap-x-20 lg:grid-cols-12">
+        <ul class="grid gap-12 lg:grid-cols-12 lg:gap-x-20">
             {% for collection in contentful %}
                 {% if collection.isFeatureHome %}
                     <li class="lg:col-span-4">
-                        <a class="block duration-500 transition-opacity hover:opacity-50"
-                           href="/collections/{{ collection.title | slug }}"
-                           title="{{ collection.title }}">
-                            <img alt="{{ collection.title }}"
-                                 class="object-cover mb-4 rounded-lg"
-                                 src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fm=webp&amp;h=720&amp;q=80&amp;w=1280"/>
+                        <a
+                            class="block transition-opacity duration-500 hover:opacity-50"
+                            href="/collections/{{ collection.title | slug }}"
+                            title="{{ collection.title }}"
+                        >
+                            <img
+                                alt="{{ collection.title }}"
+                                class="mb-4 rounded-lg object-cover"
+                                src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fm=webp&amp;h=720&amp;q=80&amp;w=1280"
+                            >
                             <div>
-                                <span class="block font-medium mb-2 text-xs tracking-widest uppercase">{{ collection.category }}</span>
-                                <h3 class="font-bold mb-4 text-2xl lg:text-3xl">{{ collection.title }}</h3>
+                                <span class="mb-2 block text-xs font-medium tracking-widest uppercase">
+                                    {{- collection.category -}}
+                                </span>
+                                <h3 class="mb-4 text-2xl font-bold lg:text-3xl">{{ collection.title }}</h3>
                                 <p class="text-base">{{ collection.excerpt }}</p>
                             </div>
                         </a>

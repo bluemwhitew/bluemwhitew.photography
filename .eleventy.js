@@ -11,14 +11,14 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.setServerOptions({
         module: '@11ty/eleventy-server-browsersync',
-        ghostMode: true
+        ghostMode: true,
     });
 
     return {
         dir: {
             input: 'src',
-            output: 'dist'
+            output: 'dist',
         },
-        htmlTemplateEngine: false
+        htmlTemplateEngine: false,
     };
 };

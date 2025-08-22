@@ -1,34 +1,90 @@
 <!doctype html>
-<html amp lang="en-gb">
+<html
+    amp
+    lang="en-gb"
+>
     <head>
-        <meta charset="utf-8"/>
-        <meta name="author" content="Matt Walters"/>
+        <meta charset="utf-8">
+        <meta
+            name="author"
+            content="Matt Walters"
+        >
         {% if metaDescription %}
-            <meta name="description" content="{{ metaDescription }}"/>
+            <meta
+                name="description"
+                content="{{ metaDescription }}"
+            >
         {% endif %}
-        <meta name="generator" content="Eleventy"/>
+        <meta
+            name="generator"
+            content="Eleventy"
+        >
         {% if metaKeywords %}
-            <meta name="keywords" content="{{ metaKeywords }}"/>
+            <meta
+                name="keywords"
+                content="{{ metaKeywords }}"
+            >
         {% endif %}
-        <meta name="language" content="english"/>
+        <meta
+            name="language"
+            content="english"
+        >
         {% if metaRating %}
-            <meta name="rating" content="{{ metaRating }}"/>
+            <meta
+                name="rating"
+                content="{{ metaRating }}"
+            >
         {% else %}
-            <meta name="rating" content="general"/>
+            <meta
+                name="rating"
+                content="general"
+            >
         {% endif %}
         {% if metaRobots %}
-            <meta name="robots" content="{{ metaRobots }}"/>
+            <meta
+                name="robots"
+                content="{{ metaRobots }}"
+            >
         {% else %}
-            <meta name="robots" content="index, follow"/>
+            <meta
+                name="robots"
+                content="index, follow"
+            >
         {% endif %}
-        <meta name="viewport" content="width=device-width, minimal-ui, minimum-scale=1, initial-scale=1"/>
-        <link rel="canonical" href="{{ page.url }}"/>
-        <link rel="icon" href="data:image/svg+xml,<svg viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22><text font-size=%2290%22 y=%22.9em%22>📷</text></svg>"/>
-        <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin="anonymous"/>
-        <link rel="preconnect dns-prefetch" href="https://images.ctfassets.net/" crossorigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans+JP:wght@400;700" rel="stylesheet"/>
-        <link href="/assets/css/tailwind.css" rel="stylesheet"/>
-        <title>{{ title }} &mdash; bluemwhitew Photography</title>
+        <meta
+            name="viewport"
+            content="width=device-width, minimal-ui, minimum-scale=1, initial-scale=1"
+        >
+        <link
+            rel="canonical"
+            href="{{ page.url }}"
+        >
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg viewBox=%220 0 100 100%22 xmlns=%22http://www.w3.org/2000/svg%22><text font-size=%2290%22 y=%22.9em%22>📷</text></svg>"
+        >
+        <link
+            rel="preconnect dns-prefetch"
+            href="https://fonts.gstatic.com/"
+            crossorigin="anonymous"
+        >
+        <link
+            rel="preconnect dns-prefetch"
+            href="https://images.ctfassets.net/"
+            crossorigin="anonymous"
+        >
+        <link
+            href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans+JP:wght@400;700"
+            rel="stylesheet"
+        >
+        <link
+            href="/assets/css/tailwind.css"
+            rel="stylesheet"
+        >
+        <title>
+            {{ title }}
+            &mdash; bluemwhitew Photography
+        </title>
     </head>
     <body class="bg-zinc-900 text-white">
         {% render "header" %}

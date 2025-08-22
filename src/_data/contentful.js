@@ -1,6 +1,8 @@
 require('dotenv').config();
 
-const preview = ['1', 'true'].includes((process.env.CONTENTFUL_PREVIEW || '').toLowerCase());
+const preview = ['1', 'true'].includes(
+    (process.env.CONTENTFUL_PREVIEW || '').toLowerCase(),
+);
 const contentful = require('contentful');
 const client = contentful.createClient({
     accessToken: preview
@@ -12,13 +14,15 @@ const client = contentful.createClient({
 });
 
 module.exports = async () => {
-    return client.getEntries({
-        content_type: 'collection',
-        order: '-fields.date'
-    }).then(function (response) {
-        return response.items
-            .map(function (collection) {
+    return client
+        .getEntries({
+            content_type: 'collection',
+            order: '-fields.date',
+        })
+        .then(function (response) {
+            return response.items.map(function (collection) {
                 return collection.fields;
             });
-    }).catch(console.error);
+        })
+        .catch(console.error);
 };

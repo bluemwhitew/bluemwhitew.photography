@@ -1,19 +1,22 @@
-<section class="bg-black h-[80vh] max-h-[960px] min-h-[540px] overflow-hidden relative">
-    <img alt="{{ collection.featuredImage.fields.title }}"
-         class="absolute inset-0 w-full h-full object-cover opacity-75"
-         decoding="async"
-         fetchpriority="high"
-         loading="eager"
-         sizes="100vw"
-         src="https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=960&q=80&w=1920"
-         srcset="https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=800&q=80&w=640 640w,
-                 https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=768&q=80&w=1024 1024w,
-                 https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=960&q=80&w=1440 1440w,
-                 https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=960&q=80&w=1920 1920w"
-    />
-    <div class="absolute bottom-0 inset-x-0">
+<section class="relative h-[80vh] max-h-[960px] min-h-[540px] overflow-hidden bg-black">
+    <img
+        alt="{{ collection.featuredImage.fields.title }}"
+        class="absolute inset-0 h-full w-full object-cover opacity-75"
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        sizes="100vw"
+        src="https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=960&q=80&w=1920"
+        srcset="
+            https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=800&q=80&w=640 640w,
+            https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=768&q=80&w=1024 1024w,
+            https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=960&q=80&w=1440 1440w,
+            https:{{ collection.featuredImage.fields.file.url }}?f=center&fit=fill&fl=progressive&fm=jpg&h=960&q=80&w=1920 1920w
+        "
+    >
+    <div class="absolute inset-x-0 bottom-0">
         <div class="container mx-auto">
-            <h1 class="font-bold px-4 py-8 md:pb-12 lg:pb-16 text-5xl text-white z-10">{{ collection.title }}</h1>
+            <h1 class="z-10 px-4 py-8 text-5xl font-bold text-white md:pb-12 lg:pb-16">{{ collection.title }}</h1>
         </div>
     </div>
 </section>
