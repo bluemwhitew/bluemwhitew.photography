@@ -4,9 +4,8 @@ eleventyComputed:
 layout: layout.liquid
 permalink: "collections/"
 ---
-
-<section class="flex flex-col justify-center min-h-[50vh] text-center">
-    <h1 class="font-bold mb-4 text-5xl md:text-6xl">Collections</h1>
+<section class="flex min-h-[50vh] flex-col justify-center text-center">
+    <h1 class="mb-4 text-5xl font-bold md:text-6xl">Collections</h1>
 </section>
 
 {% if contentful %}
@@ -15,40 +14,58 @@ permalink: "collections/"
             {% for collection in contentful %}
                 <li>
                     {% if collection.isPrivate != true %}
-                        <a class="block group no-underline relative text-white" href="/collections/{{ collection.title | slug }}" title="{{ collection.title }}">
+                        <a
+                            class="group relative block text-white no-underline"
+                            href="/collections/{{ collection.title | slug }}"
+                            title="{{ collection.title }}"
+                        >
                             <figure>
                                 {% if collection.featuredImage.fields.file.url %}
-                                    <img alt="{{ collection.title }}"
-                                         decoding="async"
-                                         height="640"
-                                         loading="lazy"
-                                         src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
-                                         srcset="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
-                                                 https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
-                                                 https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x"
-                                         width="640"/>
+                                    <img
+                                        alt="{{ collection.title }}"
+                                        decoding="async"
+                                        height="640"
+                                        loading="lazy"
+                                        src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
+                                        srcset="
+                                            https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
+                                            https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
+                                            https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x
+                                        "
+                                        width="640"
+                                    >
                                 {% endif %}
-                                <figcaption class="absolute duration-500 flex flex-col group-hover:opacity-100 group-hover:translate-y-0 justify-center inset-4 opacity-0 text-center transition-all translate-y-4">
-                                    <h5 class="font-bold text-3xl">{{ collection.title }}</h5>
+                                <figcaption class="absolute inset-4 flex translate-y-4 flex-col justify-center text-center opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                                    <h5 class="text-3xl font-bold">{{ collection.title }}</h5>
                                 </figcaption>
                             </figure>
                         </a>
                     {% else %}
-                        <figure class="cursor-not-allowed group relative">
+                        <figure class="group relative cursor-not-allowed">
                             {% if collection.featuredImage.fields.file.url %}
-                                <img alt="{{ collection.title }}"
-                                     decoding="async"
-                                     height="640"
-                                     loading="lazy"
-                                     src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
-                                     srcset="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
-                                         https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
-                                         https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x"
-                                     width="640"/>
+                                <img
+                                    alt="{{ collection.title }}"
+                                    decoding="async"
+                                    height="640"
+                                    loading="lazy"
+                                    src="https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640"
+                                    srcset="
+                                        https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=426&amp;q=80&amp;w=426 1x,
+                                        https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=640&amp;q=80&amp;w=640 2x,
+                                        https:{{ collection.featuredImage.fields.file.url }}?f=center&amp;fit=fill&amp;fl=progressive&amp;fm=jpg&amp;h=1280&amp;q=80&amp;w=1280 3x
+                                    "
+                                    width="640"
+                                >
                             {% endif %}
-                            <figcaption class="absolute duration-500 flex flex-col group-hover:opacity-100 group-hover:translate-y-0 justify-center inset-4 opacity-0 text-center transition-all translate-y-4">
-                                <h5 class="font-bold text-3xl text-center">
-                                    <svg class="h-8 mb-4 mx-auto text-yellow-200 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <figcaption class="absolute inset-4 flex translate-y-4 flex-col justify-center text-center opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                                <h5 class="text-center text-3xl font-bold">
+                                    <svg
+                                        class="mx-auto mb-4 h-8 w-8 text-yellow-200"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
                                         <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                                     </svg>
                                     <span>Access Required</span>

@@ -19,9 +19,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: package-lock.json
-          node-version: '22.18'
+          node-version: "22.18"
       - run: |
           echo "Build #$GITHUB_SHA" > ${{ github.workspace }}/src/_includes/footer/build-information/information.liquid
           npm ci
@@ -35,7 +35,7 @@ jobs:
           key: ${{ secrets.KEY }}
           overwrite: true
           port: ${{ secrets.PORT }}
-          source: 'dist/*'
+          source: "dist/*"
           strip_components: 1
           target: ${{ secrets.TARGET }} # "/var/www/x1908"
           username: ${{ secrets.USERNAME }}
