@@ -26,7 +26,7 @@ jobs:
           echo "Build #$GITHUB_SHA" > ${{ github.workspace }}/src/_includes/footer/build-information/information.liquid
           npm ci
           npm run tailwind:build
-          npm run build
+          npm run eleventy:build
 
       - name: Deploy
         uses: appleboy/scp-action@v0.1.7
