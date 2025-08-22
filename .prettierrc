@@ -1,9 +1,25 @@
 {
-    "embeddedSingleQuote": false,
+    "embeddedSingleQuote": true,
     "liquidSingleQuote": false,
+    "overrides": [
+        {
+            "files": ["**/*.css", "**/*.js"],
+            "options": {
+                "singleQuote": true
+            }
+        },
+        {
+            "files": ["**/*.{yaml,yml}"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ],
     "plugins": [
         "@shopify/prettier-plugin-liquid",
         "prettier-plugin-tailwindcss"
     ],
-    "tabWidth": 4
+    "singleQuote": false,
+    "tabWidth": 4,
+    "tailwindStylesheet": "./src/assets/css/style.css"
 }
