@@ -28,7 +28,7 @@ region: lon
 static_sites:
   - build_command: |
       npm run tailwind:build
-      npm run build
+      npm run eleventy:build
     environment_slug: node-js
     envs:
       - key: NPM_CONFIG_PRODUCTION

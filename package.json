@@ -36,8 +36,8 @@
         "url": "git@github.com:bluemwhitew/bluemwhitew.photography.git"
     },
     "scripts": {
-        "build": "eleventy",
-        "start": "eleventy --port=1908 --serve",
+        "eleventy:build": "eleventy",
+        "eleventy:dev": "eleventy --port=1908 --serve",
         "tailwind:build": "npx @tailwindcss/cli --input src/assets/css/style.css --minify --output src/assets/css/tailwind.css",
         "tailwind:dev": "npx @tailwindcss/cli --input src/assets/css/style.css --output src/assets/css/tailwind.css --watch"
     }
