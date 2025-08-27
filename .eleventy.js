@@ -9,11 +9,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/img');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
 
-    eleventyConfig.setServerOptions({
-        module: '@11ty/eleventy-server-browsersync',
-        ghostMode: true,
-    });
-
     return {
         dir: {
             input: 'src',
