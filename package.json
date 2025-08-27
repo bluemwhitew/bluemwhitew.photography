@@ -7,7 +7,7 @@
         "url": "https://www.github.com/bluemwhitew/bluemwhitew.photography/issues"
     },
     "dependencies": {
-        "@11ty/eleventy": "^2.0.1",
+        "@11ty/eleventy": "^3.1.2",
         "@11ty/eleventy-server-browsersync": "^1.0.2",
         "@tailwindcss/cli": "^4.1.12",
         "contentful": "^11.7.15",
