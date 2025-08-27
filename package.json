@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "@11ty/eleventy": "^3.1.2",
+        "@11ty/eleventy-fetch": "^5.1.0",
         "@tailwindcss/cli": "^4.1.12",
         "contentful": "^11.7.15",
         "dotenv": "^17.2.1",
