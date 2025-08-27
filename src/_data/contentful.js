@@ -35,4 +35,5 @@ const getCollections = async () => {
         type: 'json',
     });
 };
+
 export default getCollections;
