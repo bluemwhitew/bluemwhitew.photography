@@ -1,5 +1,3 @@
-const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
-
 /**
  * @param eleventyConfig
  * @returns {{dir: {output: string, input: string}}}
@@ -10,9 +8,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/css/tailwind.css');
     eleventyConfig.addPassthroughCopy('src/assets/img');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
-
-    // Plugins
-    eleventyConfig.addPlugin(UpgradeHelper);
 
     return {
         dir: {
