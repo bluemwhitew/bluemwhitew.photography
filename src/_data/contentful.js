@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import { createClient } from 'contentful';
+import Fetch from '@11ty/eleventy-fetch';
 
 const preview = ['1', 'true'].includes(
     (process.env.CONTENTFUL_PREVIEW || '').toLowerCase(),
@@ -14,7 +15,7 @@ const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
 });
 
-const getCollections = async () => {
+const fetchCollections = async () => {
     try {
         const response = await client.getEntries({
             content_type: 'collection',
@@ -27,4 +28,11 @@ const getCollections = async () => {
     }
 };
 
+const getCollections = async () => {
+    return await Fetch(fetchCollections(), {
+        // @todo: Determine Build Trigger
+        duration: process.env.NODE_ENV === 'production' ? '0s' : '1d',
+        type: 'json',
+    });
+};
 export default getCollections;
