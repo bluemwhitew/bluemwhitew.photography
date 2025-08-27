@@ -31,6 +31,9 @@ static_sites:
       npm run eleventy:build
     environment_slug: node-js
     envs:
+      - key: HUSKY
+        scope: BUILD_TIME
+        value: "0"
       - key: NPM_CONFIG_PRODUCTION
         scope: BUILD_TIME
         value: "true"

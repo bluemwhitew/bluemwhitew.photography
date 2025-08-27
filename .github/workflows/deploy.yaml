@@ -8,6 +8,7 @@ jobs:
       CONTENTFUL_ACCESS_TOKEN_DELIVERY_API: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_DELIVERY_API }}
       CONTENTFUL_ENVIRONMENT: ${{ secrets.CONTENTFUL_ENVIRONMENT }}
       CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      HUSKY: 0
       NODE_ENV: production
     if: github.repository == 'bluemwhitew/bluemwhitew.photography'
     name: Deploy
