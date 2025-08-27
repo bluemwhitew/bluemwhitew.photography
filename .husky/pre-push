@@ -1,0 +1,8 @@
+branch=$(git rev-parse --abbrev-ref HEAD)
+pattern='^(feature|fix|hotfix|release)/[0-9]+_[a-z0-9_]+$'
+
+if ! echo "$branch" | grep --extended-regexp --quiet "$pattern"; then
+    echo "Invalid branch name: '$branch'"
+
+    exit 1
+fi

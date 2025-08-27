@@ -1,19 +1,19 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-*: initial;
-  --font-sans: 'Noto Sans JP', 'Noto Sans', Arial, sans-serif;
+    --font-*: initial;
+    --font-sans: 'Noto Sans JP', 'Noto Sans', Arial, sans-serif;
 
-  --color-brand-bluemwhitew: #007fff;
-  --color-brand-twitter: #1da1f2;
+    --color-brand-bluemwhitew: #007fff;
+    --color-brand-twitter: #1da1f2;
 
-  --grid-template-columns-media-relaxed: 50% 1fr;
-  --grid-template-columns-media-loose: 60% 1fr;
+    --grid-template-columns-media-relaxed: 50% 1fr;
+    --grid-template-columns-media-loose: 60% 1fr;
 
-  --grid-template-rows-media-normal: repeat(3, 60vh);
-  --grid-template-rows-media-loose: repeat(2, minmax(20rem, 1fr));
+    --grid-template-rows-media-normal: repeat(3, 60vh);
+    --grid-template-rows-media-loose: repeat(2, minmax(20rem, 1fr));
 
-  --translate-3px: 3px;
+    --translate-3px: 3px;
 }
 
 @layer base {

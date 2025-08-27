@@ -1,24 +1,19 @@
 /**
  * @param eleventyConfig
  * @returns {{dir: {output: string, input: string}}}
- * @see https://www.11ty.io/docs/config|Configuration
+ * @see https://www.11ty.dev/docs/config
  */
-module.exports = function (eleventyConfig) {
+export default (eleventyConfig) => {
     // Passthroughs
     eleventyConfig.addPassthroughCopy('src/assets/css/tailwind.css');
     eleventyConfig.addPassthroughCopy('src/assets/img');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
 
-    eleventyConfig.setServerOptions({
-        module: '@11ty/eleventy-server-browsersync',
-        ghostMode: true
-    });
-
     return {
         dir: {
             input: 'src',
-            output: 'dist'
+            output: 'dist',
         },
-        htmlTemplateEngine: false
+        htmlTemplateEngine: false,
     };
 };
