@@ -39,7 +39,6 @@ static_sites:
         value: "true"
     github:
       branch: master
-      deploy_on_push: true
       repo: bluemwhitew/bluemwhitew.photography
     name: bluemwhitew-photography
     output_dir: dist
