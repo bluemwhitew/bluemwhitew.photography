@@ -1,0 +1,43 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  cancel-in-progress: false
+  group: ${{ github.workflow }}
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    env:
+      CONTENTFUL_ACCESS_TOKEN_DELIVERY_API: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_DELIVERY_API }}
+      CONTENTFUL_ENVIRONMENT: ${{ secrets.CONTENTFUL_ENVIRONMENT }}
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      HUSKY: 0
+      NODE_ENV: production
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            .do/
+            src/
+            .eleventy.js
+            package.json
+            package-lock.json
+
+      - name: Apply Build Information
+        run: |
+          echo "Build #$GITHUB_SHA" > ${{ github.workspace }}/src/_includes/footer/build-information/information.liquid
+
+      - name: Deploy to DigitalOcean
+        uses: digitalocean/app_action/deploy@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
