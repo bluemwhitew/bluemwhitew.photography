@@ -40,4 +40,6 @@ jobs:
       - name: Deploy to DigitalOcean
         uses: digitalocean/app_action/deploy@v2
         with:
+          app_name: bluemwhitew-photography
+          app_spec_location: .do/app.yml
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
