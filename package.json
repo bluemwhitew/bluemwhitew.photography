@@ -12,7 +12,7 @@
         "@tailwindcss/cli": "^4.1.12",
         "contentful": "^11.7.15",
         "dotenv": "^17.2.1",
-        "tailwindcss": "^4.1.12"
+        "tailwindcss": "^4.1.15"
     },
     "devDependencies": {
         "@shopify/prettier-plugin-liquid": "^1.9.4",
